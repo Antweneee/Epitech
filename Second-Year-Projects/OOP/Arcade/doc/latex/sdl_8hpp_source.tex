@@ -1,0 +1,67 @@
+\hypertarget{sdl_8hpp_source}{}\doxysection{sdl.\+hpp}
+\label{sdl_8hpp_source}\index{/home/zesor/Tek/Semestre4/OOP/Arcade/ouuuh/includes/sdl.hpp@{/home/zesor/Tek/Semestre4/OOP/Arcade/ouuuh/includes/sdl.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{** EPITECH PROJECT, 2022}}
+\DoxyCodeLine{3 \textcolor{comment}{** B-\/OOP-\/400-\/PAR-\/4-\/1-\/arcade-\/valentin.fouillet}}
+\DoxyCodeLine{4 \textcolor{comment}{** File description:}}
+\DoxyCodeLine{5 \textcolor{comment}{** sdl}}
+\DoxyCodeLine{6 \textcolor{comment}{*/}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <SDL2/SDL\_ttf.h>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <SDL2/SDL\_image.h>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <SDL2/SDL\_video.h>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <SDL2/SDL\_render.h>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <SDL2/SDL\_events.h>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}includes.hpp"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}IDisplay.hpp"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classSdl}{Sdl}} : \textcolor{keyword}{public} \mbox{\hyperlink{classIDisplay}{IDisplay}}}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18 \textcolor{keyword}{public}:}
+\DoxyCodeLine{19     \mbox{\hyperlink{classSdl}{Sdl}}();}
+\DoxyCodeLine{20     \mbox{\hyperlink{classSdl}{\string~Sdl}}();}
+\DoxyCodeLine{21     Arcade::KEYS get\_key();}
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} draw(\mbox{\hyperlink{classIInfo_1_1GameData}{IInfo::GameData}}\&);}
+\DoxyCodeLine{23     \textcolor{keywordtype}{void} init();}
+\DoxyCodeLine{24     \textcolor{keywordtype}{void} window\_handler();}
+\DoxyCodeLine{25     \textcolor{keywordtype}{void} refreshh();}
+\DoxyCodeLine{26     \textcolor{keywordtype}{void} clearr();}
+\DoxyCodeLine{27     Arcade::PROTO get\_lib\_name();}
+\DoxyCodeLine{28     std::tuple<Arcade::PROTO, Arcade::PROTO> my\_menu();}
+\DoxyCodeLine{29     std::string get\_name() \{ \textcolor{keywordflow}{return} this-\/>\_name; \};}
+\DoxyCodeLine{30     \textcolor{keywordtype}{void} Exit();}
+\DoxyCodeLine{31     Arcade::PROTO choose\_game(std::string name);}
+\DoxyCodeLine{32     \textcolor{keywordtype}{bool} initt();}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{private}:}
+\DoxyCodeLine{35     std::string \_name;}
+\DoxyCodeLine{36     Arcade::KEYS \_key;}
+\DoxyCodeLine{37     \mbox{\hyperlink{classIInfo_1_1GameData}{IInfo::GameData}} \_data;}
+\DoxyCodeLine{38     SDL\_Window *\_window;}
+\DoxyCodeLine{39     SDL\_Renderer *\_renderer;}
+\DoxyCodeLine{40     SDL\_bool \_is\_launched;}
+\DoxyCodeLine{41     SDL\_Event \_event;}
+\DoxyCodeLine{42     std::vector<SDL\_Rect> \_rect;}
+\DoxyCodeLine{43     std::vector<SDL\_Surface*> \_surface;}
+\DoxyCodeLine{44     SDL\_Rect shape;}
+\DoxyCodeLine{45     SDL\_Surface* surf;}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     SDL\_Rect rect1, rect2;}
+\DoxyCodeLine{48     SDL\_Renderer* renderer;}
+\DoxyCodeLine{49     SDL\_Texture* texture1, *texture2;}
+\DoxyCodeLine{50     SDL\_Window* window;}
+\DoxyCodeLine{51     SDL\_Event event;}
+\DoxyCodeLine{52     \textcolor{keywordtype}{bool} is\_launched = \textcolor{keyword}{true};}
+\DoxyCodeLine{53     std::string name;}
+\DoxyCodeLine{54     \textcolor{keywordtype}{bool} before = \textcolor{keyword}{true};}
+\DoxyCodeLine{55     SDL\_Surface* image = NULL;}
+\DoxyCodeLine{56     SDL\_Texture *texture = NULL;}
+\DoxyCodeLine{57     SDL\_Rect rect;}
+\DoxyCodeLine{58     SDL\_Surface* imagepac = NULL;}
+\DoxyCodeLine{59     SDL\_Texture *texturepac = NULL;}
+\DoxyCodeLine{60     SDL\_Rect rectpac;}
+\DoxyCodeLine{61 \};}
+
+\end{DoxyCode}

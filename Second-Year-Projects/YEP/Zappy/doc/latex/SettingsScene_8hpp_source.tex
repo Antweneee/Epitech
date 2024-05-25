@@ -1,0 +1,49 @@
+\hypertarget{SettingsScene_8hpp_source}{}\doxysection{Settings\+Scene.\+hpp}
+\label{SettingsScene_8hpp_source}\index{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/gui/include/SettingsScene.hpp@{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/gui/include/SettingsScene.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{** EPITECH PROJECT, 2022}}
+\DoxyCodeLine{3 \textcolor{comment}{** B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson}}
+\DoxyCodeLine{4 \textcolor{comment}{** File description:}}
+\DoxyCodeLine{5 \textcolor{comment}{** SettingsScene}}
+\DoxyCodeLine{6 \textcolor{comment}{*/}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef SETTINGSSCENE\_HPP\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{    \#define SETTINGSSCENE\_HPP\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{    \#include "{}AScene.hpp"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{    \#include "{}Button.hpp"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{    \#include "{}keys.hpp"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{enum} SETTINGSMENU \{}
+\DoxyCodeLine{16     PLUSBUTTON,}
+\DoxyCodeLine{17     MINUSBUTTON,}
+\DoxyCodeLine{18     RETURNBUTTON}
+\DoxyCodeLine{19 \};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classSettingsScene}{SettingsScene}} : \textcolor{keyword}{public} \mbox{\hyperlink{classAScene}{AScene}} \{}
+\DoxyCodeLine{22     \textcolor{keyword}{public}:}
+\DoxyCodeLine{23         \mbox{\hyperlink{classSettingsScene}{SettingsScene}}(std::shared\_ptr<Settings> settings);}
+\DoxyCodeLine{24         \mbox{\hyperlink{classSettingsScene}{\string~SettingsScene}}();}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26         sf::RectangleShape getRectangleShape() \textcolor{keyword}{const};}
+\DoxyCodeLine{27         std::vector<std::shared\_ptr<Button>> getButtonList() \textcolor{keyword}{const};}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29         \textcolor{keywordtype}{void} upgradeVolume();}
+\DoxyCodeLine{30         \textcolor{keywordtype}{void} downgradeVolume();}
+\DoxyCodeLine{31         \textcolor{keywordtype}{void} exitSettings();}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33         std::string updateSrting(std::string \textcolor{keywordtype}{string}, sf::Keyboard::Key \&key);}
+\DoxyCodeLine{34     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{35     \textcolor{keyword}{private}:}
+\DoxyCodeLine{36         sf::RectangleShape \_rectangle;}
+\DoxyCodeLine{37         sf::Texture \_textureButton;}
+\DoxyCodeLine{38         sf::Texture \_texturePlus;}
+\DoxyCodeLine{39         sf::Texture \_textureMinus;}
+\DoxyCodeLine{40         std::vector<std::shared\_ptr<Button>> \_buttons;}
+\DoxyCodeLine{41 \};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !SETTINGSSCENE\_HPP\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

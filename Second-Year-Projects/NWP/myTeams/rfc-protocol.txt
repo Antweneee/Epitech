@@ -1,0 +1,121 @@
+NOT FOUND:
+    400 Bad Request
+
+
+HELP:
+    /help -> 911 (Success)
+    /help [param] -> 405 (Failure) Too many arguments
+
+
+LOG(in)(out):
+    /login ["user_name"] -> 200 login successful
+    /login [param] [param] -> 405 Too many arguments
+    /login ["user_name"] (len > 32) -> 407 Login name too long
+
+    /logout -> 302 logout successful
+    /logout -> 406 Not logged in
+    /logout [param] -> 405  Too many arguments
+
+
+USER(s):
+    /users -> 202 users successful $(name uuid\n...)
+    /users [param] -> 405 Too many arguments
+
+    /user ["user_uuid"] -> 203 user successful $(name) $(uuid) $(connected)
+    /user ["user_uuid" don't exist] -> 404 user $(user_uuid) Not Found
+    /user [param] [param] -> 405 Too many arguments
+
+
+MSG:
+    /send ["user_uuid"]["message_body"] -> 204 send to $(user_uuid)
+    /send ["user_uuid" don't exist]["message_body"] -> 404 send user $(user_uuid) not found
+    /send [param] | /send [param] [param] [param] -> 405 Too many arguments
+    /send (not login) -> 401 send Unauthorized
+
+    /messages ["user_uuid"] -> 205 messages of $(user_uuid)
+    /messages ["user_uuid"] -> 401 Unauthorized can't see other's conversation
+    /messages ["user_uuid" don't exist] -> 404 messages of $(user_uuid) does not exist
+    /messages [param] [param] -> 405 Too many arguments
+    /messages (not login) -> 401 messages Unauthorized
+    MESSAGE RECEIVED:
+    -> 210 send from $(user_uuid) with message:$(message_body)
+
+
+subscribe:
+    /subscribe ["team_uuid"] -> 206 subscribe to $(team_uuid) successful
+    /subscribe ["team_uuid" don't exist] -> 404 subscribe team $(team_uuid) Not Found
+    /subscribe [param] [param] -> 405 Too many arguments
+
+unsubscribe
+    /unsubscribe ["team_uuid"] -> 209 unsubscribe to $(team_uuid) successful
+    /unsubscribe ["team_uuid" don't exist] -> 404 unsubscribe team $(team_uuid) Not Found
+    /unsubscribe [param] [param] -> 405 Too many arguments
+
+subscribed:
+    /subscribed -> 207 subscribed \n$(team_uuid)\n$(team_name)\n$(team_description)\n
+    /subscribed (not login) -> 401 subscribed Unauthorized
+    /subscribed ["team_uuid"] -> 208 subscribed \n$(user_uuid) $(user_name) $(user_status)\n
+    /subscribed ["team_uuid" don't exist] -> 404 subscribed team $(team_uuid) Not Found
+    /subscribed [param] [param] -> 405 Too many arguments
+
+
+
+USE => CREATE | LIST | INFO:
+    /use -> 300 (Success)
+    /use ["team_uuid"] -> 310 (Success)
+    /use ["team_uuid"]["channel_uuid"] -> 320 (Success)
+    /use ["team_uuid"]["channel_uuid"]["thread_uuid"] -> 330 (Success)
+    /use [param] [param] [param] [param] -> 405  (Failure) Too many arguments
+
+
+CREATE:
+    300 => [
+        /create ["team_name"]["team_description"] -> 301 (Success)
+        /create ["team_name"]["team_description"] (/use context not defined)-> 401 create Unauthorized
+        /create [param] [param] [param] -> 405  (Failure) Too many arguments
+    ],
+    310 => [
+        /create ["channel_name"]["channel_description"] -> 311 (Success)
+        /create ["channel_name"]["channel_description"] (/use context not defined)-> 401 create Unauthorized
+        /create [param] [param] [param] -> 405  (Failure) Too many arguments
+    ],
+    320 => [
+        /create ["thread_title"]["thread_message"] -> 321 (Success)
+        /create ["thread_title"]["thread_message"] (/use context not defined)-> 401 create Unauthorized
+        /create [param] [param] [param] -> 405  (Failure) Too many arguments
+    ],
+    330 => [
+        /create ["comment_body"] -> 331 (Success)
+        /create ["comment_body"] (/use context not defined)-> 401 create Unauthorized
+        /create [param] [param] -> 405  (Failure) Too many arguments
+    ];
+
+LIST:
+    300 => [
+        /list -> 302 (Success)
+    ],
+    310 => [
+        /list -> 312 (Success)
+    ],
+    320 => [
+        /list -> 322 (Success)
+    ],
+    330 => [
+        /list -> 332 (Success)
+    ],
+    /list [param] -> 405  (Failure) Too many arguments
+
+INFO:
+    300 => [
+        /info -> 303 (Success)
+    ],
+    310 => [
+        /info -> 313 (Success)
+    ],
+    320 => [
+        /info -> 323 (Success)
+    ],
+    330 => [
+        /info -> 333 (Success)
+    ],
+    /info [param] -> 405  (Failure) Too many arguments

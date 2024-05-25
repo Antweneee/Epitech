@@ -1,0 +1,7 @@
+score {
+    - Valoup[33234]
+    - Illyas[13468]
+}
+Button {
+    - color[Blue]
+}

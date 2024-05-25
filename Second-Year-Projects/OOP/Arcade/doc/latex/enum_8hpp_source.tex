@@ -1,0 +1,56 @@
+\hypertarget{enum_8hpp_source}{}\doxysection{enum.\+hpp}
+\label{enum_8hpp_source}\index{/home/zesor/Tek/Semestre4/OOP/Arcade/ouuuh/includes/enum.hpp@{/home/zesor/Tek/Semestre4/OOP/Arcade/ouuuh/includes/enum.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{** EPITECH PROJECT, 2022}}
+\DoxyCodeLine{3 \textcolor{comment}{** B-\/OOP-\/400-\/PAR-\/4-\/1-\/arcade-\/valentin.fouillet}}
+\DoxyCodeLine{4 \textcolor{comment}{** File description:}}
+\DoxyCodeLine{5 \textcolor{comment}{** enum}}
+\DoxyCodeLine{6 \textcolor{comment}{*/}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef ENUM\_HPP\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define ENUM\_HPP\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{namespace }Arcade}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13     \textcolor{keyword}{enum} PROTO \{}
+\DoxyCodeLine{14         NCRUSES,}
+\DoxyCodeLine{15         \mbox{\hyperlink{classSfml}{Sfml}},}
+\DoxyCodeLine{16         SDL,}
+\DoxyCodeLine{17         PACMAN,}
+\DoxyCodeLine{18         NIBBLER,}
+\DoxyCodeLine{19     \};}
+\DoxyCodeLine{20     \textcolor{keyword}{enum} KEYS}
+\DoxyCodeLine{21     \{}
+\DoxyCodeLine{22         UP, \textcolor{comment}{// • upper key}}
+\DoxyCodeLine{23         DOWN, \textcolor{comment}{// • down key}}
+\DoxyCodeLine{24         LEFT, \textcolor{comment}{// • left key}}
+\DoxyCodeLine{25         RIGHT, \textcolor{comment}{// • right key}}
+\DoxyCodeLine{26         SPACE, \textcolor{comment}{// • space key}}
+\DoxyCodeLine{27         ESC, \textcolor{comment}{// • exit key}}
+\DoxyCodeLine{28         F1, \textcolor{comment}{// • previous graphics library.}}
+\DoxyCodeLine{29         F2, \textcolor{comment}{// • next graphics library.}}
+\DoxyCodeLine{30         F3, \textcolor{comment}{// • previous game.}}
+\DoxyCodeLine{31         F4, \textcolor{comment}{// • previous game.}}
+\DoxyCodeLine{32         R, \textcolor{comment}{// • restart the game.}}
+\DoxyCodeLine{33         M, \textcolor{comment}{// • go back to the menu.}}
+\DoxyCodeLine{34         F, \textcolor{comment}{// • Bonus key}}
+\DoxyCodeLine{35         NIL, \textcolor{comment}{// • error key}}
+\DoxyCodeLine{36     \};}
+\DoxyCodeLine{37     \textcolor{keyword}{const} \textcolor{keyword}{struct}}
+\DoxyCodeLine{38     \{}
+\DoxyCodeLine{39         Arcade::KEYS \_key;}
+\DoxyCodeLine{40         \textcolor{keywordtype}{int} x;}
+\DoxyCodeLine{41         \textcolor{keywordtype}{int} y;}
+\DoxyCodeLine{42     \} \_\_position\_\_[] = \{}
+\DoxyCodeLine{43         \{Arcade::KEYS::UP, -\/1, 0\},}
+\DoxyCodeLine{44         \{Arcade::KEYS::DOWN, 1, 0\},}
+\DoxyCodeLine{45         \{Arcade::KEYS::LEFT, 0, -\/1\},}
+\DoxyCodeLine{46         \{Arcade::KEYS::RIGHT, 0, 1\},}
+\DoxyCodeLine{47     \};}
+\DoxyCodeLine{48 \}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !ENUM\_HPP\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

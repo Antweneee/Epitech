@@ -1,0 +1,59 @@
+\hypertarget{classDrawable}{}\doxysection{Drawable Class Reference}
+\label{classDrawable}\index{Drawable@{Drawable}}
+Inheritance diagram for Drawable\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDrawable}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDrawable_a90b9bcc0593a3d4b6774404d34d3b746}\label{classDrawable_a90b9bcc0593a3d4b6774404d34d3b746}} 
+{\bfseries Drawable} (int width, int height)
+\item 
+\mbox{\Hypertarget{classDrawable_accd2a7a56bdf11374afa75f9ef19e851}\label{classDrawable_accd2a7a56bdf11374afa75f9ef19e851}} 
+void {\bfseries init\+\_\+sprite} (std\+::string const \&sprite\+\_\+path, int pos\+\_\+x, int pos\+\_\+y)
+\item 
+\mbox{\Hypertarget{classDrawable_a393425bc1df2f6898475b83674159179}\label{classDrawable_a393425bc1df2f6898475b83674159179}} 
+sf\+::\+Int\+Rect {\bfseries get\+\_\+rect} () const
+\item 
+\mbox{\Hypertarget{classDrawable_a934f997b6516f2f23cd8e5114d6a7d7b}\label{classDrawable_a934f997b6516f2f23cd8e5114d6a7d7b}} 
+void {\bfseries set\+\_\+rect} (sf\+::\+Int\+Rect const \&rect)
+\item 
+\mbox{\Hypertarget{classDrawable_ac2e31ba4a0d4fa039294c39c436c8e85}\label{classDrawable_ac2e31ba4a0d4fa039294c39c436c8e85}} 
+void {\bfseries set\+\_\+rect} (int const width, int const height, int const top=0, int const left=0)
+\item 
+\mbox{\Hypertarget{classDrawable_aa22809540f9cbd39537fe5866ceada7d}\label{classDrawable_aa22809540f9cbd39537fe5866ceada7d}} 
+void {\bfseries change\+\_\+sprite} (std\+::string const \&texture\+\_\+path)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDrawable_a4f2d9d6c1e160f0cc9ff39c52eabb85f}\label{classDrawable_a4f2d9d6c1e160f0cc9ff39c52eabb85f}} 
+void {\bfseries set\+\_\+sprite\+\_\+pos} (int const, int const)
+\item 
+\mbox{\Hypertarget{classDrawable_a7f82cc22198a3beb19ad4f179d7fe1ab}\label{classDrawable_a7f82cc22198a3beb19ad4f179d7fe1ab}} 
+void {\bfseries set\+\_\+sprite\+\_\+pos} (sf\+::\+Vector2f \&)
+\item 
+\mbox{\Hypertarget{classDrawable_acb593bac193e3568f77f4a3d2ae16b77}\label{classDrawable_acb593bac193e3568f77f4a3d2ae16b77}} 
+virtual void {\bfseries is\+\_\+clicked} (sf\+::\+Mouse \&mouse)=0
+\item 
+\mbox{\Hypertarget{classDrawable_a158d6314325c737393edbf2d0d83cc95}\label{classDrawable_a158d6314325c737393edbf2d0d83cc95}} 
+sf\+::\+Vector2f {\bfseries get\+\_\+pos} () const
+\item 
+\mbox{\Hypertarget{classDrawable_a3ea675debecd371bc405637263293e06}\label{classDrawable_a3ea675debecd371bc405637263293e06}} 
+void {\bfseries draw} (sf\+::\+Render\+Window \&window)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDrawable_a66862b659af4d75c1755694da4bb85db}\label{classDrawable_a66862b659af4d75c1755694da4bb85db}} 
+sf\+::\+Sprite {\bfseries \+\_\+sprite}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/zesor/\+Tek/\+Semestre4/\+Zappy/\+B-\/\+YEP-\/410-\/\+PAR-\/4-\/1-\/zappy-\/thomas.\+willson/gui/include/Drawable.\+hpp\item 
+/home/zesor/\+Tek/\+Semestre4/\+Zappy/\+B-\/\+YEP-\/410-\/\+PAR-\/4-\/1-\/zappy-\/thomas.\+willson/gui/Drawable.\+cpp\end{DoxyCompactItemize}

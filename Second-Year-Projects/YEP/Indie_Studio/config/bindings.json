@@ -1,0 +1,48 @@
+{
+    "bindings": {
+        "Player 1": {
+            "up": "Z",
+            "down": "S",
+            "left": "Q",
+            "right": "D",
+            "bomb": "SPACE",
+            "char": "A",
+            "pos_x": "22.5",
+            "pos_y": "0.0",
+            "pos_z": "11.25"
+        },
+        "Player 2": {
+            "up": "I",
+            "down": "K",
+            "left": "J",
+            "right": "L",
+            "bomb": "U",
+            "char": "B",
+            "pos_x": "138.25",
+            "pos_y": "0.0",
+            "pos_z": "11.25"
+        },
+        "Player 3": {
+            "up": "UP_ARROW",
+            "down": "DOWN_ARROW",
+            "left": "LEFT_ARROW",
+            "right": "RIGHT_ARROW",
+            "bomb": ":",
+            "char": "C",
+            "pos_x": "138.25",
+            "pos_y": "0.0",
+            "pos_z": "127.0"
+        },
+        "Player 4": {
+            "up": "LEFT_UP",
+            "down": "LEFT_DOWN",
+            "left": "LEFT_LEFT",
+            "right": "LEFT_RIGHT",
+            "bomb": "RIGHT_DOWN",
+            "char": "D",
+            "pos_x": "22.5",
+            "pos_y": "0.0",
+            "pos_z": "127.0"
+        }
+    }
+}

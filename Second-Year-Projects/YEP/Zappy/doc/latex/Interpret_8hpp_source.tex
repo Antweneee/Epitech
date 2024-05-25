@@ -1,0 +1,61 @@
+\hypertarget{Interpret_8hpp_source}{}\doxysection{Interpret.\+hpp}
+\label{Interpret_8hpp_source}\index{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/gui/include/Interpret.hpp@{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/gui/include/Interpret.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{** EPITECH PROJECT, 2022}}
+\DoxyCodeLine{3 \textcolor{comment}{** B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson}}
+\DoxyCodeLine{4 \textcolor{comment}{** File description:}}
+\DoxyCodeLine{5 \textcolor{comment}{** Interpret}}
+\DoxyCodeLine{6 \textcolor{comment}{*/}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef INTERPRET\_HPP\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define INTERPRET\_HPP\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{    \#include <sys/types.h>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{    \#include <sys/socket.h>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{    \#include <vector>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{    \#include <arpa/inet.h>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{    \#include "{}Player.hpp"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{    \#include "{}Cases.hpp"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{    \#include "{}data\_server.h"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classInterpret}{Interpret}}}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22     \textcolor{keyword}{public}:}
+\DoxyCodeLine{23         \mbox{\hyperlink{classInterpret}{Interpret}}(\textcolor{keywordtype}{int} \textcolor{keyword}{const} port, std::string \textcolor{keyword}{const} \&machine);}
+\DoxyCodeLine{24         \mbox{\hyperlink{classInterpret}{Interpret}}(\mbox{\hyperlink{classInterpret}{Interpret}} \textcolor{keyword}{const} \&) = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{25         \mbox{\hyperlink{classInterpret}{\string~Interpret}}();}
+\DoxyCodeLine{26         \textcolor{keywordtype}{int} read\_server();}
+\DoxyCodeLine{27         \textcolor{keywordtype}{int} write\_server(std::string \textcolor{keyword}{const} \&);}
+\DoxyCodeLine{28         \textcolor{keywordtype}{int} init\_client();}
+\DoxyCodeLine{29         \textcolor{keywordtype}{int} compute\_data\_in\_cpp();}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31         std::vector<Player> \&get\_players();}
+\DoxyCodeLine{32         std::vector<Cases> \&get\_cases();}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34         \textcolor{keywordtype}{void} debug();}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \textcolor{keyword}{private}:}
+\DoxyCodeLine{37         \textcolor{keywordtype}{int} can\_be\_read();}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39         fd\_set \_current\_socket;}
+\DoxyCodeLine{40         \textcolor{keyword}{struct }timeval timeout;}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42         \textcolor{keywordtype}{int} \_socket\_fd;}
+\DoxyCodeLine{43         \textcolor{keyword}{struct }sockaddr\_in \_addrserver;}
+\DoxyCodeLine{44         \textcolor{keywordtype}{int} \_port;}
+\DoxyCodeLine{45         std::string \_ip;}
+\DoxyCodeLine{46         \textcolor{keywordtype}{size\_t} \_csize;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48         \textcolor{keywordtype}{bool} \_checked;}
+\DoxyCodeLine{49         \mbox{\hyperlink{structdata__server__to__gui__s}{data\_server\_to\_gui\_t}} \_data\_from\_server;}
+\DoxyCodeLine{50         std::string \_code;}
+\DoxyCodeLine{51         std::vector<Player> \_players;}
+\DoxyCodeLine{52         std::vector<Cases> \_cases;}
+\DoxyCodeLine{53 \};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !INTERPRET\_HPP\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

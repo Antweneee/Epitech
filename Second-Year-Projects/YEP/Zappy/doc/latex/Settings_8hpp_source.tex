@@ -1,0 +1,74 @@
+\hypertarget{Settings_8hpp_source}{}\doxysection{Settings.\+hpp}
+\label{Settings_8hpp_source}\index{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/gui/include/Settings.hpp@{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/gui/include/Settings.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{** EPITECH PROJECT, 2022}}
+\DoxyCodeLine{3 \textcolor{comment}{** B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson}}
+\DoxyCodeLine{4 \textcolor{comment}{** File description:}}
+\DoxyCodeLine{5 \textcolor{comment}{** Settings}}
+\DoxyCodeLine{6 \textcolor{comment}{*/}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef SETTINGS\_HPP\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{    \#define SETTINGS\_HPP\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{    \#include <vector>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{    \#include <utility>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{    \#include <SFML/Config.hpp>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{    \#include <SFML/Window/Keyboard.hpp>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{    \#include <SFML/Graphics.hpp>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{    \#include <SFML/Window/Window.hpp>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{    \#include <SFML/Audio.hpp>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{    \#include <memory>}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{    \#include "{}scenes.hpp"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{    \#include "{}enum.hpp"{}}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classSettings}{Settings}} \{}
+\DoxyCodeLine{24     \textcolor{keyword}{public}:}
+\DoxyCodeLine{25         \mbox{\hyperlink{classSettings}{Settings}}(std::string machine) : \_machine(machine)}
+\DoxyCodeLine{26         \{}
+\DoxyCodeLine{27             \_volume = 20;}
+\DoxyCodeLine{28             \_mousePosition = std::make\_pair(0, 0);}
+\DoxyCodeLine{29             \_event = EVENTS::DEFAULTEVENT;}
+\DoxyCodeLine{30             \_musics.push\_back(std::make\_shared<sf::Music>());}
+\DoxyCodeLine{31             \_musics.at(0)-\/>openFromFile(\textcolor{stringliteral}{"{}gui/assets/one\_piece\_music.ogg"{}});}
+\DoxyCodeLine{32         \}}
+\DoxyCodeLine{33         \mbox{\hyperlink{classSettings}{\string~Settings}}() \{\}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35         \textcolor{keywordtype}{float} getVolume()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \_volume; \}}
+\DoxyCodeLine{36         \textcolor{keywordtype}{void} setVolume(\textcolor{keywordtype}{float} volume) \{ \_volume = volume; \}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38         \textcolor{comment}{// std::vector<std::shared\_ptr<sf::Sound>> getSoundList() const;}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40         std::vector<std::shared\_ptr<sf::Music>> getMusicList()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \_musics; \}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42         \textcolor{comment}{// void playSound(int id) \{ \_sounds.at(id)-\/>play(); \}}}
+\DoxyCodeLine{43         \textcolor{keywordtype}{void} playMusic(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}) \{ \_musics.at(\textcolor{keywordtype}{id})-\/>play(); \}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45         \textcolor{keywordtype}{void} setMousePosition(\textcolor{keyword}{const} std::pair<int, int> \&mousePosition) \{ \_mousePosition = mousePosition; \}}
+\DoxyCodeLine{46         std::pair<int, int> getMousePosition()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \_mousePosition; \}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48         EVENTS getEvent()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \_event; \}}
+\DoxyCodeLine{49         \textcolor{keywordtype}{void} setEvent(EVENTS event) \{ \_event = event; \}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51         Scenes getScene()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \_scene; \}}
+\DoxyCodeLine{52         \textcolor{keywordtype}{void} setScene(Scenes scene) \{ \_scene = scene; \}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54         std::string getMachine()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \_machine; \}}
+\DoxyCodeLine{55         \textcolor{keywordtype}{void} setScene(std::string machine) \{ \_machine = machine; \}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{58     \textcolor{keyword}{private}:}
+\DoxyCodeLine{59         \textcolor{keywordtype}{float} \_volume;}
+\DoxyCodeLine{60         \textcolor{comment}{// std::vector<std::shared\_ptr<sf::Sound>> \_sounds;}}
+\DoxyCodeLine{61         std::vector<std::shared\_ptr<sf::Music>> \_musics;}
+\DoxyCodeLine{62         std::pair<int, int> \_mousePosition;}
+\DoxyCodeLine{63         std::string \_machine;}
+\DoxyCodeLine{64         EVENTS \_event;}
+\DoxyCodeLine{65         Scenes \_scene;}
+\DoxyCodeLine{66 \};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !SETTINGS\_HPP\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

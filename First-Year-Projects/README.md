@@ -1,6 +1,6 @@
 # First Year Projects
 
-* Here are most of my project at EPITECH
+> Here are most of my project at EPITECH during my first year
 
 ## [Unix & C Lab Seminar](/First-Year-Projects/CPOOL/README.md)
 

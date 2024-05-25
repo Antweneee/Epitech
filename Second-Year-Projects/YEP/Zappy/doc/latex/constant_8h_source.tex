@@ -1,0 +1,141 @@
+\hypertarget{constant_8h_source}{}\doxysection{constant.\+h}
+\label{constant_8h_source}\index{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/server/include/constant.h@{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/server/include/constant.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{** EPITECH PROJECT, 2022}}
+\DoxyCodeLine{3 \textcolor{comment}{** B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson}}
+\DoxyCodeLine{4 \textcolor{comment}{** File description:}}
+\DoxyCodeLine{5 \textcolor{comment}{** constant}}
+\DoxyCodeLine{6 \textcolor{comment}{*/}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef CONSTANT\_H\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{    \#define CONSTANT\_H\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{    \#include <stdio.h>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{    \#include <stdlib.h>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{    \#include <string.h>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{    \#include <sys/epoll.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{    \#include <fcntl.h>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{    \#define UNKNOW "{}ko\(\backslash\)n"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{    \#define MAX\_EVENTS 10}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{    \#define EXIT\_FAILURE\_EPI 84}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{    \#define NUMBER\_MAX\_ARGS 13}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{    \#define FUNCTION\_ERROR -\/1}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{    \#define LISTEN\_BACKLOG 50}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{    \#define MAX\_CASE\_LOOK \(\backslash\)}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{    strlen("{}[ player food linemate deraumere sibur mendiane phiras thystame]"{}})}
+\DoxyCodeLine{25 \textcolor{preprocessor}{    \#define LEVEL\_CASE\_LOOK\_MAX(level) (level * 2 + 2) * MAX\_CASE\_LOOK}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{    \#define INVENTORY\_FORMAT  \(\backslash\)}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{    "{}[ food \%d, linemate \%d, deraumere \%d, sibur \%d, mendiane \%d, phiras \%d, thystame \%d ]\(\backslash\)n"{}}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{    \#define NETWORK\_CLIENT(i, j) (i == '\(\backslash\)n' || j == '\(\backslash\)r')}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{    \#define UP\_Y(player, level, index) (int)(player-\/>y -\/ level + index)}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{    \#define RIGHT\_Y(player, level, index) (int)(player-\/>y -\/ level + index)}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{    \#define LEFT\_Y(player, level, index) (int)(player-\/>y + level -\/ index)}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{    \#define DOWN\_Y(player, level, index) (int)(player-\/>y + level -\/ index)}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{    \#define RIGHT\_X(player, level, index) (int)(player-\/>x + level -\/ index)}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{    \#define Y\_NEG(info, level, index) (int)(info-\/>height -\/ level + index)}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{    \#define Y\_POS(level, index) (int)(0 + index -\/ 2)}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{    \#define O\_Y\_POS(level, index) (int)(level -\/ index -\/ 1)}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{    \#define O\_X\_POS(index) (int)(index)}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{    \#define O\_X\_NEG(info, index) (int)( info-\/>width -\/ 1 -\/ index)}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{    \#define X\_NEG(info, level, index) (int)(info-\/>width -\/ level + index)}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{    \#define X\_POS(level, index) (int)(index)}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{preprocessor}{    \#define UP\_X(player, level, index) (int)(player-\/>x -\/ level + index)}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{    \#define RIGHT\_X(player, level, index) (int)(player-\/>x + level -\/ index)}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{    \#define LEFT\_X(player, level, index) (int)(player-\/>x -\/ level + index)}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{    \#define DOWN\_X(player, level, index) (int)(player-\/>x + level -\/ index)}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{    \#define RIGHT\_Y\_ABS(info, player, level, index) \(\backslash\)}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{    RIGHT\_Y(player, level, index) < 0 ? Y\_NEG(info, level, index) :   \(\backslash\)}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{    RIGHT\_Y(player, level, index) > (int)(info-\/>height -\/ 1) ? Y\_POS(level, index)    \(\backslash\)}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{    : RIGHT\_Y(player, level, index)}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{    \#define RIGHT\_X\_ABS(info, player, level, index) \(\backslash\)}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{    RIGHT\_X(player, level, index) < 0 ? X\_NEG(info, level, index) :   \(\backslash\)}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{    RIGHT\_X(player, level, index) > (int)(info-\/>width -\/ 1) ? X\_POS(level, index)    \(\backslash\)}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{    : RIGHT\_X(player, level, index)}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{    \#define LEFT\_Y\_ABS(info, player, level, index) \(\backslash\)}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{    LEFT\_Y(player, level, index) < 0 ? Y\_NEG(info, level, index) :   \(\backslash\)}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{    LEFT\_Y(player, level, index) > (int)(info-\/>height -\/ 1) ? O\_X\_POS(index)    \(\backslash\)}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{    : LEFT\_Y(player, level, index)}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{preprocessor}{    \#define LEFT\_X\_ABS(info, player, level, index) \(\backslash\)}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{    LEFT\_X(player, level, index) < 0 ? X\_NEG(info, level, index) :   \(\backslash\)}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{    LEFT\_X(player, level, index) > (int)(info-\/>width -\/ 1) ? X\_POS(level, index)    \(\backslash\)}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{    : LEFT\_X(player, level, index)}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{preprocessor}{    \#define UP\_Y\_ABS(info, player, level, index) \(\backslash\)}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{    UP\_Y(player, level, index) < 0 ? Y\_NEG(info, level, index) :   \(\backslash\)}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{    UP\_Y(player, level, index) > (int)(info-\/>height -\/ 1) ? X\_POS(level, index)    \(\backslash\)}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{    : UP\_Y(player, level, index)}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \textcolor{preprocessor}{    \#define UP\_X\_ABS(info, player, level, index) \(\backslash\)}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{    UP\_X(player, level, index) < 0 ? X\_NEG(info, level, index) :   \(\backslash\)}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{    UP\_X(player, level, index) > (int)(info-\/>width -\/ 1) ? Y\_POS(level, index)    \(\backslash\)}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{    : UP\_X(player, level, index)}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{preprocessor}{    \#define DOWN\_Y\_ABS(info, player, level, index) \(\backslash\)}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{    DOWN\_Y(player, level, index) < 0 ? Y\_NEG(info, level, index) :   \(\backslash\)}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{    DOWN\_Y(player, level, index) > (int)(info-\/>height -\/ 1) ? O\_Y\_POS(level, index)    \(\backslash\)}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{    : DOWN\_Y(player, level, index)}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \textcolor{preprocessor}{    \#define DOWN\_X\_ABS(info, player, level, index) \(\backslash\)}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{    DOWN\_X(player, level, index) < 0 ? O\_X\_NEG(info, index) :   \(\backslash\)}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{    DOWN\_X(player, level, index) > (int)(info-\/>width -\/ 1) ? O\_X\_POS(index)    \(\backslash\)}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{    : DOWN\_X(player, level, index)}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 \textcolor{preprocessor}{    \#define sizeof\_arr(array) sizeof(array) / sizeof(array[0])}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{    \#define \_\_ATTRIBUTE\_UNUSED\_\_ \_\_attribute\_\_((unused))}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{preprocessor}{    \#define P 0}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{    \#define PORT 1}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{    \#define PORT\_FLAG "{}-\/p"{}}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{    \#define X 2}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{    \#define WIDTH 3}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{    \#define WIDTH\_FLAG "{}-\/x"{}}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{    \#define Y 4}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{    \#define HEIGHT 5}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{    \#define HEIGHT\_FLAG "{}-\/y"{}}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{    \#define N 6}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{    \#define NAME\_FLAG "{}-\/n"{}}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{    \#define C(i) (i + 0)}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{    \#define CLIENTSNB(i) (i + 1)}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{    \#define CLIENTSNB\_FLAG "{}-\/c"{}}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{    \#define F(i) (i + 2)}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{    \#define FREQ(i) (i + 3)}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{    \#define FREQ\_FLAG "{}-\/f"{}}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{preprocessor}{    \#define MIN\_WIDTH 10}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{    \#define MAX\_WIDTH 30}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{    \#define MIN\_HEIGHT 10}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{    \#define MAX\_HEIGHT 30}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{    \#define MIN\_CLIENTS\_NB 0}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{    \#define MIN\_FREQ 2}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{    \#define MAX\_FREQ 10000}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{    \#define ELEVATION\_MESSAGE "{}Elevation underwayCurrent level:"{}}}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 \textcolor{preprocessor}{    \#define handle\_error(msg)   \(\backslash\)}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{        do \{ perror(msg); return (EXIT\_FAILURE); \} while(0);}}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 \textcolor{preprocessor}{    \#define debug(msg)                      \(\backslash\)}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{        do \{                                \(\backslash\)}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{            fprintf(stderr, "{}[\%s]\(\backslash\)n"{}}, msg); \(\backslash\)}
+\DoxyCodeLine{133         \} while(0);}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !CONSTANT\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

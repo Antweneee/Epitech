@@ -1,0 +1,125 @@
+\hypertarget{broadcast_8h_source}{}\doxysection{broadcast.\+h}
+\label{broadcast_8h_source}\index{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/server/include/broadcast.h@{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/server/include/broadcast.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{** EPITECH PROJECT, 2022}}
+\DoxyCodeLine{3 \textcolor{comment}{** B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson}}
+\DoxyCodeLine{4 \textcolor{comment}{** File description:}}
+\DoxyCodeLine{5 \textcolor{comment}{** broadcast}}
+\DoxyCodeLine{6 \textcolor{comment}{*/}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef BROADCAST\_H\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{    \#define BROADCAST\_H\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{    \#include "{}server.h"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structpositions__s}{positions\_s}} \{}
+\DoxyCodeLine{14     uint x;}
+\DoxyCodeLine{15     uint y;}
+\DoxyCodeLine{16     \textcolor{keywordtype}{char} k;}
+\DoxyCodeLine{17     \mbox{\hyperlink{structclient__s}{client\_t}} *client;}
+\DoxyCodeLine{18     \textcolor{keyword}{struct }\mbox{\hyperlink{structpositions__s}{positions\_s}} *next;}
+\DoxyCodeLine{19 \} \mbox{\hyperlink{structpositions__s}{positions\_t}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structdegree__angle__table__s}{degree\_angle\_table\_s}} \{}
+\DoxyCodeLine{22     \textcolor{keyword}{const} \textcolor{keywordtype}{float} min\_degree;}
+\DoxyCodeLine{23     \textcolor{keyword}{const} \textcolor{keywordtype}{float} max\_degree;}
+\DoxyCodeLine{24     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *position;}
+\DoxyCodeLine{25 \} \mbox{\hyperlink{structdegree__angle__table__s}{degree\_angle\_table\_t}};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{float} NORTH\_DEGREE = 180.0;}
+\DoxyCodeLine{28 \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{float} WEST\_DEGREE  = 90.0;}
+\DoxyCodeLine{29 \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{float} EST\_DEGREE   = -\/90.0;}
+\DoxyCodeLine{30 \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{float} SOUTH\_DEGREE = 0.0;}
+\DoxyCodeLine{31 \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{float} SCALE\_PROTRACTOR\_MAX\_SIZE = 180.0;}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{    \#define NORTH       "{}NORTH"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{    \#define EST         "{}EST"{}}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{    \#define WEST        "{}WEST"{}}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{    \#define SOUTH       "{}SOUTH"{}}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{    \#define NORTH\_EST   "{}NORTH\_EST"{}}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{    \#define NORTH\_WEST  "{}NORTH\_WEST"{}}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{    \#define SOUTH\_EST   "{}SOUTH\_EST"{}}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{    \#define SOUTH\_WEST  "{}SOUTH\_WEST"{}}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{keyword}{static} \textcolor{keyword}{const} \mbox{\hyperlink{structdegree__angle__table__s}{degree\_angle\_table\_t}} DEGREE\_ANGLE\_TABLE[] = \{}
+\DoxyCodeLine{43     \{NORTH\_DEGREE,  NORTH\_DEGREE,   NORTH\},}
+\DoxyCodeLine{44     \{EST\_DEGREE,    EST\_DEGREE,     EST\},}
+\DoxyCodeLine{45     \{WEST\_DEGREE,   WEST\_DEGREE,    WEST\},}
+\DoxyCodeLine{46     \{SOUTH\_DEGREE,  SOUTH\_DEGREE,   SOUTH\},}
+\DoxyCodeLine{47     \{SOUTH\_DEGREE,  WEST\_DEGREE,    SOUTH\_EST\},}
+\DoxyCodeLine{48     \{WEST\_DEGREE,   NORTH\_DEGREE,   NORTH\_EST\},}
+\DoxyCodeLine{49     \{EST\_DEGREE,    SOUTH\_DEGREE,   SOUTH\_WEST\},}
+\DoxyCodeLine{50     \{-\/NORTH\_DEGREE, EST\_DEGREE,     NORTH\_WEST\},}
+\DoxyCodeLine{51 \};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{preprocessor}{    \#define sizeof\_array(array) (sizeof(array) / sizeof(array[0]))}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structposition__table__tail__s}{position\_table\_tail\_s}} \{}
+\DoxyCodeLine{56     \textcolor{keywordtype}{int} oriented;}
+\DoxyCodeLine{57     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *position;}
+\DoxyCodeLine{58     \textcolor{keywordtype}{char} tail;}
+\DoxyCodeLine{59 \} \mbox{\hyperlink{structposition__table__tail__s}{position\_table\_tail\_t}};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{    \#define PLAYER\_LOOK\_NORTH 270}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{    \#define PLAYER\_LOOK\_WEST 180}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{    \#define PLAYER\_LOOK\_EST 0}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{    \#define PLAYER\_LOOK\_SOUTH 90}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{    \#define TAIL\_1 '1'}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{    \#define TAIL\_2 '2'}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{    \#define TAIL\_3 '3'}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{    \#define TAIL\_4 '4'}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{    \#define TAIL\_5 '5'}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{    \#define TAIL\_6 '6'}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{    \#define TAIL\_7 '7'}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{    \#define TAIL\_8 '8'}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{keyword}{static} \textcolor{keyword}{const} \mbox{\hyperlink{structposition__table__tail__s}{position\_table\_tail\_t}} POSITION\_TABLE\_TAIL[] = \{}
+\DoxyCodeLine{75     \{PLAYER\_LOOK\_EST, NORTH,        TAIL\_7\},}
+\DoxyCodeLine{76     \{PLAYER\_LOOK\_EST, WEST,         TAIL\_1\},}
+\DoxyCodeLine{77     \{PLAYER\_LOOK\_EST, EST,          TAIL\_5\},}
+\DoxyCodeLine{78     \{PLAYER\_LOOK\_EST, SOUTH,        TAIL\_3\},}
+\DoxyCodeLine{79     \{PLAYER\_LOOK\_EST, NORTH\_WEST,   TAIL\_4\},}
+\DoxyCodeLine{80     \{PLAYER\_LOOK\_EST, NORTH\_EST,    TAIL\_2\},}
+\DoxyCodeLine{81     \{PLAYER\_LOOK\_EST, SOUTH\_WEST,   TAIL\_6\},}
+\DoxyCodeLine{82     \{PLAYER\_LOOK\_EST, SOUTH\_EST,    TAIL\_8\},}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \{PLAYER\_LOOK\_SOUTH, NORTH,      TAIL\_1\},}
+\DoxyCodeLine{85     \{PLAYER\_LOOK\_SOUTH, WEST,       TAIL\_3\},}
+\DoxyCodeLine{86     \{PLAYER\_LOOK\_SOUTH, EST,        TAIL\_7\},}
+\DoxyCodeLine{87     \{PLAYER\_LOOK\_SOUTH, SOUTH,      TAIL\_5\},}
+\DoxyCodeLine{88     \{PLAYER\_LOOK\_SOUTH, NORTH\_WEST, TAIL\_6\},}
+\DoxyCodeLine{89     \{PLAYER\_LOOK\_SOUTH, NORTH\_EST,  TAIL\_4\},}
+\DoxyCodeLine{90     \{PLAYER\_LOOK\_SOUTH, SOUTH\_WEST, TAIL\_8\},}
+\DoxyCodeLine{91     \{PLAYER\_LOOK\_SOUTH, SOUTH\_EST,  TAIL\_2\},}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93     \{PLAYER\_LOOK\_WEST, NORTH,       TAIL\_3\},}
+\DoxyCodeLine{94     \{PLAYER\_LOOK\_WEST, WEST,        TAIL\_5\},}
+\DoxyCodeLine{95     \{PLAYER\_LOOK\_WEST, EST,         TAIL\_1\},}
+\DoxyCodeLine{96     \{PLAYER\_LOOK\_WEST, SOUTH,       TAIL\_7\},}
+\DoxyCodeLine{97     \{PLAYER\_LOOK\_WEST, NORTH\_WEST,  TAIL\_8\},}
+\DoxyCodeLine{98     \{PLAYER\_LOOK\_WEST, NORTH\_EST,   TAIL\_6\},}
+\DoxyCodeLine{99     \{PLAYER\_LOOK\_WEST, SOUTH\_WEST,  TAIL\_2\},}
+\DoxyCodeLine{100     \{PLAYER\_LOOK\_WEST, SOUTH\_EST,   TAIL\_4\},}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102     \{PLAYER\_LOOK\_NORTH, NORTH,      TAIL\_5\},}
+\DoxyCodeLine{103     \{PLAYER\_LOOK\_NORTH, WEST,       TAIL\_7\},}
+\DoxyCodeLine{104     \{PLAYER\_LOOK\_NORTH, EST,        TAIL\_3\},}
+\DoxyCodeLine{105     \{PLAYER\_LOOK\_NORTH, SOUTH,      TAIL\_1\},}
+\DoxyCodeLine{106     \{PLAYER\_LOOK\_NORTH, NORTH\_WEST, TAIL\_2\},}
+\DoxyCodeLine{107     \{PLAYER\_LOOK\_NORTH, NORTH\_EST,  TAIL\_8\},}
+\DoxyCodeLine{108     \{PLAYER\_LOOK\_NORTH, SOUTH\_WEST, TAIL\_4\},}
+\DoxyCodeLine{109     \{PLAYER\_LOOK\_NORTH, SOUTH\_EST,  TAIL\_6\},}
+\DoxyCodeLine{110 \};}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 \textcolor{keywordtype}{bool} add\_player\_position(\mbox{\hyperlink{structpositions__s}{positions\_t}} **positions,}
+\DoxyCodeLine{113 \mbox{\hyperlink{structclient__s}{client\_t}} *client, \textcolor{keywordtype}{char} k);}
+\DoxyCodeLine{114 \textcolor{keywordtype}{void} free\_player\_position(\mbox{\hyperlink{structpositions__s}{positions\_t}} **positions);}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 \textcolor{keywordtype}{char} get\_player\_tile\_sound(\mbox{\hyperlink{structplayer__s}{player\_t}} *player, uint x, uint y, \textcolor{keywordtype}{int} oriented);}
+\DoxyCodeLine{117 \textcolor{keywordtype}{char} *get\_full\_message(\textcolor{keyword}{const} \textcolor{keywordtype}{char} *text, \textcolor{keywordtype}{char} c);}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !BROADCAST\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

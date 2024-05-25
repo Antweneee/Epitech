@@ -1,0 +1,122 @@
+\hypertarget{Display_8hpp_source}{}\doxysection{Display.\+hpp}
+\label{Display_8hpp_source}\index{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/gui/include/Display.hpp@{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/gui/include/Display.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{** EPITECH PROJECT, 2022}}
+\DoxyCodeLine{3 \textcolor{comment}{** B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson}}
+\DoxyCodeLine{4 \textcolor{comment}{** File description:}}
+\DoxyCodeLine{5 \textcolor{comment}{** Display}}
+\DoxyCodeLine{6 \textcolor{comment}{*/}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef DISPLAY\_HPP\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define DISPLAY\_HPP\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{    \#include <vector>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{    \#include "{}SFML\_includes.hpp"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{    \#include "{}Player.hpp"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{    \#include "{}Cases.hpp"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{    \#include "{}scenes.hpp"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{    \#include "{}MenuScene.hpp"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{    \#include "{}SettingsScene.hpp"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{    \#include "{}keys.hpp"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{classDisplay}{Display}}}
+\DoxyCodeLine{21 \{}
+\DoxyCodeLine{22     \textcolor{keyword}{public}:}
+\DoxyCodeLine{23         \mbox{\hyperlink{classDisplay}{Display}}(std::string machine);}
+\DoxyCodeLine{24         \mbox{\hyperlink{classDisplay}{\string~Display}}();}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26         std::vector<Player> get\_players() \textcolor{keyword}{const};}
+\DoxyCodeLine{27         std::vector<Cases> get\_cases() \textcolor{keyword}{const};}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29         \textcolor{keywordtype}{void} init\_menu();}
+\DoxyCodeLine{30         \textcolor{keywordtype}{void} draw\_menu(\textcolor{keyword}{const} Scenes \&scene);}
+\DoxyCodeLine{31         \textcolor{keywordtype}{void} init(std::vector<Player> \textcolor{keyword}{const} \&players, std::vector<Cases> \textcolor{keyword}{const} \&cases);}
+\DoxyCodeLine{32         \textcolor{keywordtype}{int} engine();}
+\DoxyCodeLine{33         \textcolor{keywordtype}{void} refresh\_datas(std::vector<Player> \&players, std::vector<Cases> \&cases);}
+\DoxyCodeLine{34         \textcolor{keywordtype}{void} destroy\_all();}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36         std::shared\_ptr<Settings> getSettings() \textcolor{keyword}{const};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{keyword}{private}:}
+\DoxyCodeLine{39         \textcolor{keywordtype}{int} handle\_events(\textcolor{keyword}{const} Scenes \&scene);}
+\DoxyCodeLine{40         \textcolor{keywordtype}{void} set\_players(std::vector<Player> \textcolor{keyword}{const} \&);}
+\DoxyCodeLine{41         \textcolor{keywordtype}{void} set\_cases(std::vector<Cases> \textcolor{keyword}{const} \&);}
+\DoxyCodeLine{42         \textcolor{keywordtype}{void} draw(\textcolor{keyword}{const} Scenes \&scene);}
+\DoxyCodeLine{43         \textcolor{keywordtype}{void} clear();}
+\DoxyCodeLine{44         \textcolor{keywordtype}{void} reset\_view(\textcolor{keywordtype}{int} \textcolor{keyword}{const} x\_change, \textcolor{keywordtype}{int} \textcolor{keyword}{const} y\_change);}
+\DoxyCodeLine{45         \textcolor{keywordtype}{void} refresh\_players(std::vector<Player> \&players);}
+\DoxyCodeLine{46         \textcolor{keywordtype}{void} refresh\_cases(std::vector<Cases> \&cases);}
+\DoxyCodeLine{47         \textcolor{keywordtype}{void} init\_cases\_sprite();}
+\DoxyCodeLine{48         \textcolor{keywordtype}{void} init\_view();}
+\DoxyCodeLine{49         \textcolor{keywordtype}{void} draw\_cases\_sprites();}
+\DoxyCodeLine{50         \textcolor{keywordtype}{void} is\_here(\mbox{\hyperlink{classCases}{Cases}} \textcolor{keyword}{const} \&cases);}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52         std::vector<Player> \_players;}
+\DoxyCodeLine{53         std::vector<Cases> \_cases;}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55         std::map <std::string, sf::Sprite> \_sprites;}
+\DoxyCodeLine{56         std::map<std::string, sf::Texture> \_textures;}
+\DoxyCodeLine{57         std::map<std::string, sf::Vector2f> \_positions;}
+\DoxyCodeLine{58         std::map<int, std::unique\_ptr<sf::Text>> \_menuText;}
+\DoxyCodeLine{59         std::map<int, std::unique\_ptr<sf::Text>> \_settingsText;}
+\DoxyCodeLine{60         sf::Font \_font;}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62         std::shared\_ptr<Settings> \_settings;}
+\DoxyCodeLine{63         std::unique\_ptr<MenuScene> \_menuScene;}
+\DoxyCodeLine{64         std::unique\_ptr<SettingsScene> \_settingsScene;}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66         \textcolor{keywordtype}{int} \_map\_max\_x;}
+\DoxyCodeLine{67         \textcolor{keywordtype}{int} \_map\_max\_y;}
+\DoxyCodeLine{68         \textcolor{keywordtype}{bool} \_click;}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70         sf::Mouse \_mouse;}
+\DoxyCodeLine{71         sf::RenderWindow \_window;}
+\DoxyCodeLine{72         sf::Event \_event;}
+\DoxyCodeLine{73         sf::View \_view;}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75         std::vector<sf::Keyboard::Key> \_keys = \{}
+\DoxyCodeLine{76             sf::Keyboard::Key::A,}
+\DoxyCodeLine{77             sf::Keyboard::Key::B,}
+\DoxyCodeLine{78             sf::Keyboard::Key::C,}
+\DoxyCodeLine{79             sf::Keyboard::Key::D,}
+\DoxyCodeLine{80             sf::Keyboard::Key::E,}
+\DoxyCodeLine{81             sf::Keyboard::Key::F,}
+\DoxyCodeLine{82             sf::Keyboard::Key::H,}
+\DoxyCodeLine{83             sf::Keyboard::Key::I,}
+\DoxyCodeLine{84             sf::Keyboard::Key::J,}
+\DoxyCodeLine{85             sf::Keyboard::Key::K,}
+\DoxyCodeLine{86             sf::Keyboard::Key::L,}
+\DoxyCodeLine{87             sf::Keyboard::Key::M,}
+\DoxyCodeLine{88             sf::Keyboard::Key::N,}
+\DoxyCodeLine{89             sf::Keyboard::Key::O,}
+\DoxyCodeLine{90             sf::Keyboard::Key::P,}
+\DoxyCodeLine{91             sf::Keyboard::Key::Q,}
+\DoxyCodeLine{92             sf::Keyboard::Key::R,}
+\DoxyCodeLine{93             sf::Keyboard::Key::S,}
+\DoxyCodeLine{94             sf::Keyboard::Key::T,}
+\DoxyCodeLine{95             sf::Keyboard::Key::U,}
+\DoxyCodeLine{96             sf::Keyboard::Key::V,}
+\DoxyCodeLine{97             sf::Keyboard::Key::W,}
+\DoxyCodeLine{98             sf::Keyboard::Key::X,}
+\DoxyCodeLine{99             sf::Keyboard::Key::Y,}
+\DoxyCodeLine{100             sf::Keyboard::Key::Z,}
+\DoxyCodeLine{101             sf::Keyboard::Key::Num0,}
+\DoxyCodeLine{102             sf::Keyboard::Key::Num1,}
+\DoxyCodeLine{103             sf::Keyboard::Key::Num2,}
+\DoxyCodeLine{104             sf::Keyboard::Key::Num3,}
+\DoxyCodeLine{105             sf::Keyboard::Key::Num4,}
+\DoxyCodeLine{106             sf::Keyboard::Key::Num5,}
+\DoxyCodeLine{107             sf::Keyboard::Key::Num6,}
+\DoxyCodeLine{108             sf::Keyboard::Key::Num7,}
+\DoxyCodeLine{109             sf::Keyboard::Key::Num8,}
+\DoxyCodeLine{110             sf::Keyboard::Key::Num9,}
+\DoxyCodeLine{111             sf::Keyboard::Key::Backspace,}
+\DoxyCodeLine{112             sf::Keyboard::Key::Space,}
+\DoxyCodeLine{113         \};}
+\DoxyCodeLine{114 \};}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !DISPLAY\_HPP\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

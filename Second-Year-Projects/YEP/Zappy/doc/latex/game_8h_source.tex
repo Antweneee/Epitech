@@ -1,0 +1,60 @@
+\hypertarget{game_8h_source}{}\doxysection{game.\+h}
+\label{game_8h_source}\index{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/server/include/game.h@{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/server/include/game.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{** EPITECH PROJECT, 2022}}
+\DoxyCodeLine{3 \textcolor{comment}{** server}}
+\DoxyCodeLine{4 \textcolor{comment}{** File description:}}
+\DoxyCodeLine{5 \textcolor{comment}{** game}}
+\DoxyCodeLine{6 \textcolor{comment}{*/}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef GAME\_H\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define GAME\_H\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{    \#include <sys/types.h>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{    \#include <netinet/in.h>}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structinventory__s}{inventory\_s}}}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16     uint8\_t food;}
+\DoxyCodeLine{17     uint8\_t linemate;}
+\DoxyCodeLine{18     uint8\_t deraumere;}
+\DoxyCodeLine{19     uint8\_t sibur;}
+\DoxyCodeLine{20     uint8\_t mendiane;}
+\DoxyCodeLine{21     uint8\_t phiras;}
+\DoxyCodeLine{22     uint8\_t thystame;}
+\DoxyCodeLine{23 \} \mbox{\hyperlink{structinventory__s}{inventory\_t}};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structplayer__s}{player\_s}}}
+\DoxyCodeLine{26 \{}
+\DoxyCodeLine{27     \textcolor{keywordtype}{int} id;}
+\DoxyCodeLine{28     \textcolor{keywordtype}{int} team\_id;}
+\DoxyCodeLine{29     \textcolor{keywordtype}{int} x;}
+\DoxyCodeLine{30     \textcolor{keywordtype}{int} y;}
+\DoxyCodeLine{31     \textcolor{keywordtype}{int} oriented;}
+\DoxyCodeLine{32     uint8\_t level;}
+\DoxyCodeLine{33     \mbox{\hyperlink{structinventory__s}{inventory\_t}} inventory;}
+\DoxyCodeLine{34 \} \mbox{\hyperlink{structplayer__s}{player\_t}};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structlinked__player__s}{linked\_player\_s}}}
+\DoxyCodeLine{37 \{}
+\DoxyCodeLine{38     \mbox{\hyperlink{structplayer__s}{player\_t}} *player;}
+\DoxyCodeLine{39     \textcolor{keyword}{struct }\mbox{\hyperlink{structlinked__player__s}{linked\_player\_s}} *next;}
+\DoxyCodeLine{40 \} \mbox{\hyperlink{structlinked__player__s}{linked\_player\_t}};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structmap__s}{map\_s}}}
+\DoxyCodeLine{43 \{}
+\DoxyCodeLine{44     uint8\_t food;}
+\DoxyCodeLine{45     uint8\_t linemate;}
+\DoxyCodeLine{46     uint8\_t deraumere;}
+\DoxyCodeLine{47     uint8\_t sibur;}
+\DoxyCodeLine{48     uint8\_t mendiane;}
+\DoxyCodeLine{49     uint8\_t phiras;}
+\DoxyCodeLine{50     uint8\_t thystame;}
+\DoxyCodeLine{51     \mbox{\hyperlink{structlinked__player__s}{linked\_player\_t}} *players;}
+\DoxyCodeLine{52 \} \mbox{\hyperlink{structmap__s}{map\_t}};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !GAME\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,92 @@
+\hypertarget{server_8h_source}{}\doxysection{server.\+h}
+\label{server_8h_source}\index{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/server/include/server.h@{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/server/include/server.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{** EPITECH PROJECT, 2022}}
+\DoxyCodeLine{3 \textcolor{comment}{** B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson}}
+\DoxyCodeLine{4 \textcolor{comment}{** File description:}}
+\DoxyCodeLine{5 \textcolor{comment}{** server}}
+\DoxyCodeLine{6 \textcolor{comment}{*/}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef SERVER\_H\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{    \#define SERVER\_H\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{    \#include <sys/select.h>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{    \#include <sys/time.h>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{    \#include <sys/types.h>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{    \#include <sys/socket.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{    \#include <netinet/in.h>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{    \#include <arpa/inet.h>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{    \#include <unistd.h>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{    \#include <signal.h>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{    \#include <stdbool.h>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{    \#include "{}data\_server.h"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{    \#include "{}constant.h"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{    \#include "{}enum.h"{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{    \#include "{}game.h"{}}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{static} \textcolor{keyword}{volatile} sig\_atomic\_t keep\_running = \textcolor{keyword}{true};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structinfo__server__s}{info\_server\_s}} \{}
+\DoxyCodeLine{28     uint32\_t port;}
+\DoxyCodeLine{29     uint32\_t width;}
+\DoxyCodeLine{30     uint32\_t height;}
+\DoxyCodeLine{31     uint32\_t clients\_nb;}
+\DoxyCodeLine{32     uint32\_t freq;}
+\DoxyCodeLine{33 \} \mbox{\hyperlink{structinfo__server__s}{info\_server\_t}};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structevents__s}{events\_s}} \{}
+\DoxyCodeLine{36     \textcolor{keywordtype}{int} epoll\_fd;}
+\DoxyCodeLine{37     \textcolor{keyword}{struct }epoll\_event events[MAX\_EVENTS];}
+\DoxyCodeLine{38 \} \mbox{\hyperlink{structevents__s}{events\_t}};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structchrno__buffer__s}{chrno\_buffer\_s}}}
+\DoxyCodeLine{41 \{}
+\DoxyCodeLine{42     time\_t time;}
+\DoxyCodeLine{43     \textcolor{keywordtype}{char} *buffer;}
+\DoxyCodeLine{44     \textcolor{keywordtype}{float} stop;}
+\DoxyCodeLine{45     message\_e type;}
+\DoxyCodeLine{46     \textcolor{keyword}{struct }\mbox{\hyperlink{structchrno__buffer__s}{chrno\_buffer\_s}} *next;}
+\DoxyCodeLine{47 \} \mbox{\hyperlink{structchrno__buffer__s}{chrono\_buffer\_t}};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structclient__s}{client\_s}} \{}
+\DoxyCodeLine{50     FILE *file;}
+\DoxyCodeLine{51     type\_e type;}
+\DoxyCodeLine{52     \textcolor{keywordtype}{bool} read;}
+\DoxyCodeLine{53     \textcolor{keywordtype}{bool} connected;}
+\DoxyCodeLine{54     \textcolor{keywordtype}{char} *team\_name;}
+\DoxyCodeLine{55     \textcolor{keywordtype}{char} **command;}
+\DoxyCodeLine{56     \mbox{\hyperlink{structchrno__buffer__s}{chrono\_buffer\_t}} *chrono;}
+\DoxyCodeLine{57     \mbox{\hyperlink{structplayer__s}{player\_t}} *player;}
+\DoxyCodeLine{58     \textcolor{keywordtype}{bool} welcome : 1;}
+\DoxyCodeLine{59 \} \mbox{\hyperlink{structclient__s}{client\_t}};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structlinked__client__s}{linked\_client\_s}} \{}
+\DoxyCodeLine{62     \mbox{\hyperlink{structclient__s}{client\_t}} *client;}
+\DoxyCodeLine{63     \textcolor{keyword}{struct }\mbox{\hyperlink{structlinked__client__s}{linked\_client\_s}} *next;}
+\DoxyCodeLine{64 \} \mbox{\hyperlink{structlinked__client__s}{linked\_client\_t}};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structteam__s}{team\_s}} \{}
+\DoxyCodeLine{67     \textcolor{keywordtype}{char} *name;}
+\DoxyCodeLine{68     uint32\_t clients\_nb;}
+\DoxyCodeLine{69     \mbox{\hyperlink{structlinked__client__s}{linked\_client\_t}} *clients;}
+\DoxyCodeLine{70     \textcolor{keyword}{struct }\mbox{\hyperlink{structteam__s}{team\_s}} *next;}
+\DoxyCodeLine{71 \} \mbox{\hyperlink{structteam__s}{team\_t}}, \mbox{\hyperlink{structteam__s}{teams\_t}};}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structserver__s}{server\_s}} \{}
+\DoxyCodeLine{74     \textcolor{keywordtype}{int} fd;}
+\DoxyCodeLine{75     \textcolor{keywordtype}{size\_t} number\_connected;}
+\DoxyCodeLine{76     \mbox{\hyperlink{structlinked__client__s}{linked\_client\_t}} *data\_gui;}
+\DoxyCodeLine{77     \mbox{\hyperlink{structdata__server__to__gui__s}{data\_server\_to\_gui\_t}} send\_gui;}
+\DoxyCodeLine{78     \textcolor{keyword}{struct }sockaddr\_in addr;}
+\DoxyCodeLine{79     \textcolor{keyword}{struct }timeval timeout;}
+\DoxyCodeLine{80     \mbox{\hyperlink{structinfo__server__s}{info\_server\_t}} info\_server;}
+\DoxyCodeLine{81     \mbox{\hyperlink{structteam__s}{teams\_t}} *teams;}
+\DoxyCodeLine{82     \mbox{\hyperlink{structevents__s}{events\_t}} events;}
+\DoxyCodeLine{83     \textcolor{keywordtype}{int} id;}
+\DoxyCodeLine{84 \} \mbox{\hyperlink{structserver__s}{server\_t}};}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !SERVER\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

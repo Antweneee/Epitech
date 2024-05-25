@@ -1,0 +1,94 @@
+\hypertarget{Player_8hpp_source}{}\doxysection{Player.\+hpp}
+\label{Player_8hpp_source}\index{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/gui/include/Player.hpp@{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/gui/include/Player.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{** EPITECH PROJECT, 2022}}
+\DoxyCodeLine{3 \textcolor{comment}{** B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson}}
+\DoxyCodeLine{4 \textcolor{comment}{** File description:}}
+\DoxyCodeLine{5 \textcolor{comment}{** Player}}
+\DoxyCodeLine{6 \textcolor{comment}{*/}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef PLAYER\_HPP\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define PLAYER\_HPP\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}data\_server.h"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}Drawable.hpp"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classPlayer}{Player}} : \textcolor{keyword}{public} \mbox{\hyperlink{classDrawable}{Drawable}}}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19     \textcolor{keyword}{public}:}
+\DoxyCodeLine{20         \mbox{\hyperlink{classPlayer}{Player}}();}
+\DoxyCodeLine{21         \mbox{\hyperlink{classPlayer}{Player}}(\mbox{\hyperlink{structplayer__data__s}{player\_data\_t}} \textcolor{keyword}{const} \&data\_player);}
+\DoxyCodeLine{22         \mbox{\hyperlink{classPlayer}{Player}}(\mbox{\hyperlink{classPlayer}{Player}} \textcolor{keyword}{const} \&);}
+\DoxyCodeLine{23         \mbox{\hyperlink{classPlayer}{\string~Player}}();}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25         \textcolor{keywordtype}{void} handle\_player(sf::RenderWindow \&window, sf::Mouse \&mouse);}
+\DoxyCodeLine{26         \textcolor{keywordtype}{void} is\_clicked(sf::Mouse \&mouse);}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28         \textcolor{keywordtype}{void} set\_player\_id(\textcolor{keywordtype}{int} player\_id) \{\_player\_id = player\_id;\}}
+\DoxyCodeLine{29         \textcolor{keywordtype}{void} set\_team\_id(\textcolor{keywordtype}{int} team\_id) \{\_team\_id = team\_id;\}}
+\DoxyCodeLine{30         \textcolor{keywordtype}{void} set\_action\_id(player\_actions action\_id) \{\_action\_id = action\_id;\}}
+\DoxyCodeLine{31         \textcolor{keywordtype}{void} set\_level(\textcolor{keywordtype}{int} level) \{\_level = level;\}}
+\DoxyCodeLine{32         \textcolor{keywordtype}{void} set\_position(\textcolor{keywordtype}{int} pos\_x, \textcolor{keywordtype}{int} pos\_y) \{\_pos\_x = pos\_x;\_pos\_y = pos\_y;\}}
+\DoxyCodeLine{33         \textcolor{keywordtype}{void} set\_rect\_set(\textcolor{keywordtype}{bool} set) \{\_rect\_set = set;\}}
+\DoxyCodeLine{34         \textcolor{keywordtype}{void} set\_moved(\textcolor{keywordtype}{bool} moved) \{\_moved = moved;\}}
+\DoxyCodeLine{35         \textcolor{keywordtype}{void} set\_is\_animated(\textcolor{keywordtype}{bool} is\_animated) \{\_is\_animated = is\_animated;\}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37         \textcolor{keywordtype}{int} get\_pos\_x()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} \_pos\_x;\}}
+\DoxyCodeLine{38         \textcolor{keywordtype}{int} get\_pos\_y()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} \_pos\_y;\}}
+\DoxyCodeLine{39         \textcolor{keywordtype}{int} get\_player\_id()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} \_player\_id;\}}
+\DoxyCodeLine{40         \textcolor{keywordtype}{int} get\_team\_id()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} \_team\_id;\}}
+\DoxyCodeLine{41         player\_actions get\_action\_id()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} \_action\_id;\}}
+\DoxyCodeLine{42         \textcolor{keywordtype}{int} get\_level()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} \_level;\}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44         \mbox{\hyperlink{classPlayer}{Player}} \&operator=(\textcolor{keyword}{const} \mbox{\hyperlink{classPlayer}{Player}} \&player) \{}
+\DoxyCodeLine{45             \_pos\_x = player.\_pos\_x;}
+\DoxyCodeLine{46             \_pos\_y = player.\_pos\_y;}
+\DoxyCodeLine{47             \_player\_id = player.\_player\_id;}
+\DoxyCodeLine{48             \_team\_id = player.\_team\_id;}
+\DoxyCodeLine{49             \_action\_id = player.\_action\_id;}
+\DoxyCodeLine{50             \_level = player.\_level;}
+\DoxyCodeLine{51             \_is\_actualized = \textcolor{keyword}{true};}
+\DoxyCodeLine{52             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{53         \};}
+\DoxyCodeLine{54     \textcolor{keyword}{private}:}
+\DoxyCodeLine{55         \textcolor{keywordtype}{void} set\_sprite\_rectangle\_from\_action(player\_actions \textcolor{keyword}{const} action);}
+\DoxyCodeLine{56         \textcolor{keywordtype}{void} check\_actions(sf::RenderWindow \&window);}
+\DoxyCodeLine{57         \textcolor{keywordtype}{void} check\_animation();}
+\DoxyCodeLine{58         \textcolor{keywordtype}{void} do\_animation(\textcolor{keywordtype}{int} plus\_x, \textcolor{keywordtype}{int} plus\_y);}
+\DoxyCodeLine{59         \textcolor{keywordtype}{void} incantation\_animation();}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61         \textcolor{keywordtype}{int} \_rect\_width;}
+\DoxyCodeLine{62         \textcolor{keywordtype}{int} \_rect\_height;}
+\DoxyCodeLine{63         \textcolor{keywordtype}{int} \_rect\_top;}
+\DoxyCodeLine{64         \textcolor{keywordtype}{int} \_rect\_left;}
+\DoxyCodeLine{65         \textcolor{keywordtype}{bool} \_is\_clicked;}
+\DoxyCodeLine{66         \textcolor{keywordtype}{bool} \_is\_animated;}
+\DoxyCodeLine{67         \textcolor{keywordtype}{bool} \_rect\_set;}
+\DoxyCodeLine{68         \textcolor{keywordtype}{bool} \_is\_set;}
+\DoxyCodeLine{69         \textcolor{keywordtype}{bool} \_moved;}
+\DoxyCodeLine{70         \textcolor{keywordtype}{bool} \_is\_actualized;}
+\DoxyCodeLine{71         \textcolor{keywordtype}{int} \_nb\_incatation;}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73         sf::Sprite \_fork\_sprite;}
+\DoxyCodeLine{74         sf::Texture \_fork\_texture;}
+\DoxyCodeLine{75         sf::Sprite \_broadcast\_sprite;}
+\DoxyCodeLine{76         sf::Texture \_broadcast\_texture;}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78         \textcolor{keywordtype}{int} \_pos\_x;}
+\DoxyCodeLine{79         \textcolor{keywordtype}{int} \_pos\_y;}
+\DoxyCodeLine{80         \textcolor{keywordtype}{int} \_player\_id;}
+\DoxyCodeLine{81         \textcolor{keywordtype}{int} \_team\_id;}
+\DoxyCodeLine{82         player\_actions \_action\_id;}
+\DoxyCodeLine{83         \textcolor{keywordtype}{int} \_level;}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85         sf::Clock \_clock;}
+\DoxyCodeLine{86 \};}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !PLAYER\_HPP\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

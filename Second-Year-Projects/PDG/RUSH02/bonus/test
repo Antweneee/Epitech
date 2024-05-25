@@ -1,0 +1,165 @@
+#!/bin/sh
+
+flag="-std=gnu17 -Wall -Wextra -iquote"
+name=test_bash
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+WHITE='\033[0m'
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+
+# EXO 1
+
+echo -e "${BLUE}${bold}EXO 1${normal}${WHITE}"
+
+
+main=bonus/main_exo01.c
+output_prgm=bonus/ex01_output
+output_expected=bonus/ex01_expected
+
+gcc $flag test_files/rush2/include -o $name new.c player.c $main > /dev/null
+
+if [ ! -f "$name" ]; then
+    echo "$name does not exist."
+    exit 84;
+fi
+
+if [ -f "$output_prgm" ]; then
+    rm $output_prgm
+fi
+
+for i in {1..3}
+do
+    ./$name $i >> $output_prgm
+done
+
+rm -rf $name
+
+if diff -u "$output_prgm" "$output_expected" > /dev/null ; then
+    for i in {1..3}
+    do
+        echo -e "task $i: ${GREEN}${bold}OK${normal}${WHITE}"
+    done
+else
+    echo -e "task 1, 2 or 3: ${RED}${bold}KO${normal}${WHITE}"
+fi
+
+rm -rf $output_prgm
+
+
+# EXO 2
+
+echo -e "\n${BLUE}${bold}EXO 2${normal}${WHITE}"
+
+
+main=bonus/main_exo02.c
+output_prgm=bonus/ex02_output
+output_expected=bonus/ex02_expected
+
+gcc $flag test_files/rush2/include -o $name new.c point.c vertex.c player.c $main > /dev/null
+
+if [ ! -f "$name" ]; then
+    echo "$name does not exist."
+    exit 84;
+fi
+
+if [ -f "$output_prgm" ]; then
+    rm $output_prgm
+fi
+
+for i in {1..6}
+do
+    ./$name $i >> $output_prgm
+done
+
+rm $name
+
+if diff -u "$output_prgm" "$output_expected" > /dev/null ; then
+    for i in {1..6}
+    do
+        echo -e "task $i: ${GREEN}${bold}OK${normal}${WHITE}"
+    done
+else
+    echo -e "task 1, 2, 3, 4, 5 or 6: ${RED}${bold}KO${normal}${WHITE}"
+fi
+
+rm -rf $output_prgm
+
+
+# EXO 3
+
+echo -e "\n${BLUE}${bold}EXO 3${normal}${WHITE}"
+
+
+main=bonus/main_exo03.c
+output_prgm=bonus/ex03_output
+output_expected=bonus/ex03_expected
+
+gcc $flag test_files/rush2/include -o $name new.c point.c vertex.c player.c $main > /dev/null
+
+if [ ! -f "$name" ]; then
+    echo "$name does not exist."
+    exit 84;
+fi
+
+if [ -f "$output_prgm" ]; then
+    rm $output_prgm
+fi
+
+for i in {1..12}
+do
+    ./$name $i >> $output_prgm
+done
+
+rm $name
+
+if diff -u "$output_prgm" "$output_expected" > /dev/null ; then
+    for i in {1..12}
+    do
+        echo -e "task $i: ${GREEN}${bold}OK${normal}${WHITE}"
+    done
+else
+    echo -e "task 1 - 12: ${RED}${bold}KO${normal}${WHITE}"
+fi
+
+rm -rf $output_prgm
+
+# EXO 4
+
+echo -e "\n${BLUE}${bold}EXO 4${normal}${WHITE}"
+
+
+main=bonus/main_exo04.c
+output_prgm=bonus/ex04_output
+output_expected=bonus/ex04_expected
+
+gcc $flag test_files/rush2/include -o $name new.c int.c float.c char.c $main > /dev/null
+
+if [ ! -f "$name" ]; then
+    echo "$name does not exist."
+    exit 84;
+fi
+
+if [ -f "$output_prgm" ]; then
+    rm $output_prgm
+fi
+
+for i in {1..8}
+do
+    ./$name $i >> $output_prgm
+done
+
+rm $name
+
+if diff -u "$output_prgm" "$output_expected" > /dev/null ; then
+    for i in {1..8}
+    do
+        echo -e "task $i: ${GREEN}${bold}OK${normal}${WHITE}"
+    done
+else
+    echo -e "task 1 - 8: ${RED}${bold}KO${normal}${WHITE}"
+fi
+
+#rm -rf $output_prgm

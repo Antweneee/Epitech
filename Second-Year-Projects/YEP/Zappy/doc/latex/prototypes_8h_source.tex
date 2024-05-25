@@ -1,0 +1,67 @@
+\hypertarget{prototypes_8h_source}{}\doxysection{prototypes.\+h}
+\label{prototypes_8h_source}\index{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/ai/includes/prototypes.h@{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/ai/includes/prototypes.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{** EPITECH PROJECT, 2022}}
+\DoxyCodeLine{3 \textcolor{comment}{** B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson}}
+\DoxyCodeLine{4 \textcolor{comment}{** File description:}}
+\DoxyCodeLine{5 \textcolor{comment}{** prototypes}}
+\DoxyCodeLine{6 \textcolor{comment}{*/}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef PROTOTYPES\_H\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{    \#define PROTOTYPES\_H\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{    \#include <stdbool.h>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{    \#include <stdio.h>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{    \#include <stdint.h>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{    \#include <stdlib.h>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{    \#include <string.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{    \#include <sys/types.h>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{    \#include <sys/socket.h>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{    \#include <arpa/inet.h>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{    \#include "{}ai\_info.h"{}}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keywordtype}{bool} is\_num(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* str);}
+\DoxyCodeLine{21 \textcolor{keywordtype}{bool} check\_args(\textcolor{keywordtype}{int} argc, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *argv[]);}
+\DoxyCodeLine{22 \textcolor{keyword}{struct }\mbox{\hyperlink{structsocket__info}{socket\_info}} init\_socket\_info(int port, const char* ip);}
+\DoxyCodeLine{23 \textcolor{keywordtype}{int} connect\_to\_server(\textcolor{keywordtype}{int} socket, \textcolor{keyword}{struct} sockaddr\_in servaddr);}
+\DoxyCodeLine{24 \textcolor{keywordtype}{int} client\_loop(\textcolor{keyword}{struct} \mbox{\hyperlink{structsocket__info}{socket\_info}}* socket, \textcolor{keyword}{struct} \mbox{\hyperlink{structai__info}{ai\_info}}* ai);}
+\DoxyCodeLine{25 \textcolor{keywordtype}{int} *inventory(\textcolor{keywordtype}{char} *inventory);}
+\DoxyCodeLine{26 \textcolor{keywordtype}{bool} can\_do\_elevation\_on\_inventory(\textcolor{keywordtype}{int} actual\_level, \textcolor{keywordtype}{int} *inventory);}
+\DoxyCodeLine{27 \textcolor{keywordtype}{int} read\_client(\textcolor{keywordtype}{char}** command, FILE* fds, \textcolor{keyword}{struct} \mbox{\hyperlink{structai__info}{ai\_info}}* ai);}
+\DoxyCodeLine{28 \textcolor{keywordtype}{int} *rock\_missing(\textcolor{keywordtype}{int} actual\_level, \textcolor{keywordtype}{int} *inventory);}
+\DoxyCodeLine{29 \textcolor{keyword}{struct }\mbox{\hyperlink{structai__info}{ai\_info}} init\_ai\_info(const char* team\_name);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keywordtype}{bool} can\_do\_elevation\_on\_tile(\textcolor{keywordtype}{int} actual\_level, \textcolor{keywordtype}{int} **look);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{comment}{/* look.c */}}
+\DoxyCodeLine{34 \textcolor{keywordtype}{int} calculate\_slot\_with\_level(\textcolor{keywordtype}{int} level);}
+\DoxyCodeLine{35 \textcolor{keywordtype}{int} *create\_one\_slot(\textcolor{keywordtype}{char} *tile);}
+\DoxyCodeLine{36 \textcolor{keywordtype}{int} **parse\_look(\textcolor{keywordtype}{char} *str, \textcolor{keywordtype}{int} level);}
+\DoxyCodeLine{37 \textcolor{keywordtype}{void} print\_look\_parsed(\textcolor{keywordtype}{int} **look, \textcolor{keywordtype}{int} level);}
+\DoxyCodeLine{38 \textcolor{keywordtype}{int} *calculate\_next\_coo(\textcolor{keywordtype}{int} **look, \textcolor{keywordtype}{int} level, \textcolor{keywordtype}{int} *inventory);}
+\DoxyCodeLine{39 \textcolor{keywordtype}{char} **rock\_too\_much\_on\_tail(\textcolor{keywordtype}{int} actual\_level, \textcolor{keywordtype}{int} *tile);}
+\DoxyCodeLine{40 \textcolor{keywordtype}{char} **rock\_missing\_on\_tail(\textcolor{keywordtype}{int} actual\_level, \textcolor{keywordtype}{int} *tile);}
+\DoxyCodeLine{41 \textcolor{keywordtype}{void} just\_move\_in\_tile(\textcolor{keyword}{struct} \mbox{\hyperlink{structai__info}{ai\_info}}* ai, \textcolor{keywordtype}{int} *coord);}
+\DoxyCodeLine{42 \textcolor{keywordtype}{void} take\_the\_rocks\_needed\_in\_inventory(\textcolor{keyword}{struct} \mbox{\hyperlink{structai__info}{ai\_info}}* ai, \textcolor{keywordtype}{int} level, \textcolor{keywordtype}{int} *inventory, \textcolor{keywordtype}{int} *rocks\_on\_tile);}
+\DoxyCodeLine{43 \textcolor{keywordtype}{int} *find\_player\_needed(\textcolor{keywordtype}{int} **look, \textcolor{keywordtype}{int} level);}
+\DoxyCodeLine{44 \textcolor{keywordtype}{int} *find\_the\_pos(\textcolor{keywordtype}{int} i);}
+\DoxyCodeLine{45 \textcolor{keywordtype}{bool} drop\_all\_rocks\_in\_inventory(\textcolor{keyword}{struct} \mbox{\hyperlink{structai__info}{ai\_info}}* ai);}
+\DoxyCodeLine{46 \textcolor{keywordtype}{int} get\_broadcast\_level(\textcolor{keywordtype}{char} *str);}
+\DoxyCodeLine{47 \textcolor{keywordtype}{int} get\_broadcast\_direction(\textcolor{keywordtype}{char} *str);}
+\DoxyCodeLine{48 \textcolor{keywordtype}{bool} can\_do\_elevation\_on\_tile\_without\_players(\textcolor{keywordtype}{int} actual\_level, \textcolor{keywordtype}{int} **look);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{keywordtype}{bool} shift\_element(\textcolor{keyword}{struct} \mbox{\hyperlink{structai__info}{ai\_info}} *ai);}
+\DoxyCodeLine{51 \textcolor{keywordtype}{bool} command\_exec(\textcolor{keyword}{struct} \mbox{\hyperlink{structai__info}{ai\_info}}* ai);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{keywordtype}{void} move\_in\_tile(\textcolor{keyword}{struct} \mbox{\hyperlink{structai__info}{ai\_info}}* ai, \textcolor{keywordtype}{int} *coord);}
+\DoxyCodeLine{54 \textcolor{keywordtype}{bool} is\_queue\_empty(\textcolor{keyword}{struct} \mbox{\hyperlink{structai__info}{ai\_info}}* ai);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{keywordtype}{char} *my\_strcat(\textcolor{keywordtype}{char} *dest, \textcolor{keywordtype}{char} *src);}
+\DoxyCodeLine{57 \textcolor{keywordtype}{void} update\_look\_and\_inventory(\textcolor{keyword}{struct} \mbox{\hyperlink{structai__info}{ai\_info}} * ai);}
+\DoxyCodeLine{58 \textcolor{keywordtype}{int} find\_missing\_rock(\textcolor{keywordtype}{int} level, \textcolor{keywordtype}{int} *inventory);}
+\DoxyCodeLine{59 \textcolor{keywordtype}{bool} is\_too\_many\_player(\textcolor{keywordtype}{int} *tile, \textcolor{keywordtype}{int} level);}
+\DoxyCodeLine{60 \textcolor{keywordtype}{bool} is\_missing\_player(\textcolor{keywordtype}{int} *tile, \textcolor{keywordtype}{int} level);}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !PROTOTYPES\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,46 @@
+{
+    "menu": {
+        "window": {
+            "width": 1280,
+            "height": 720,
+            "fps": 60
+        },
+        "background": {
+            "width": 1920,
+            "height": 1080,
+            "asset": "assets/images/background.jpg"
+        },
+        "play_button": {
+            "name": "Play",
+            "title": "Play",
+            "width": 225,
+            "height": 50,
+            "pos_x": 540,
+            "pos_y": 180
+        },
+        "score_button": {
+            "name": "Scores",
+            "title": "Scores",
+            "width": 225,
+            "height": 50,
+            "pos_x": 540,
+            "pos_y": 280
+        },
+        "setting_button": {
+            "name": "Settings",
+            "title": "Settings",
+            "width": 225,
+            "height": 50,
+            "pos_x": 540,
+            "pos_y": 380
+        },
+        "exit_button": {
+            "name": "Exit",
+            "title": "Exit",
+            "width": 225,
+            "height": 50,
+            "pos_x": 540,
+            "pos_y": 480
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "pause": {
+        "resume_button": {
+            "name": "Resume",
+            "title": "Resume",
+            "width": 225,
+            "height": 50,
+            "pos_x": 540,
+            "pos_y": 180
+        },
+        "save_button": {
+            "name": "Save",
+            "title": "Save",
+            "width": 225,
+            "height": 50,
+            "pos_x": 540,
+            "pos_y": 280
+        },
+        "exit_button": {
+            "name": "Exit",
+            "title": "Exit",
+            "width": 225,
+            "height": 50,
+            "pos_x": 540,
+            "pos_y": 380
+        }
+    }
+}

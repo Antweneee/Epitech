@@ -1,0 +1,157 @@
+\hypertarget{classArcade_1_1Nibbler}{}\doxysection{Arcade\+::Nibbler Class Reference}
+\label{classArcade_1_1Nibbler}\index{Arcade::Nibbler@{Arcade::Nibbler}}
+Inheritance diagram for Arcade\+::Nibbler\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classArcade_1_1Nibbler}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classArcade_1_1Nibbler_a7a763301dac4bd66f13c24ac30dce694}\label{classArcade_1_1Nibbler_a7a763301dac4bd66f13c24ac30dce694}} 
+{\bfseries Nibbler} (std\+::string map\+\_\+path=\char`\"{}config/Nibbler\+\_\+map.\+txt\char`\"{})
+\item 
+void \mbox{\hyperlink{classArcade_1_1Nibbler_aae5f026d2a7d11d34002cc7017556c18}{init}} ()
+\item 
+void \mbox{\hyperlink{classArcade_1_1Nibbler_a34ec3af9ae3ae4da950a01b62bb9759c}{getkey}} (Arcade\+::\+KEYS key)
+\item 
+void \mbox{\hyperlink{classArcade_1_1Nibbler_af1a82f6f27b599f3cf8beb2e1662d341}{game\+\_\+over}} ()
+\item 
+void \mbox{\hyperlink{classArcade_1_1Nibbler_a5cfc6fee7c7d325dd5ec00d77473bd92}{character\+\_\+handler}} ()
+\item 
+void \mbox{\hyperlink{classArcade_1_1Nibbler_abb6fd369aa5d6ae8cec00998c3a00f4d}{end\+\_\+handler}} ()
+\item 
+void \mbox{\hyperlink{classArcade_1_1Nibbler_a98aa1e59182a39a3439cecbdecdedda7}{points\+\_\+handler}} ()
+\item 
+void \mbox{\hyperlink{classArcade_1_1Nibbler_a36d6a4a4f269a4fba67b6e09a11f48c0}{engine}} (Arcade\+::\+KEYS)
+\item 
+\mbox{\Hypertarget{classArcade_1_1Nibbler_afef0d34a94c4575dcef4097363337c8a}\label{classArcade_1_1Nibbler_afef0d34a94c4575dcef4097363337c8a}} 
+void {\bfseries debug} ()
+\item 
+\mbox{\hyperlink{classIInfo_1_1GameData}{IInfo\+::\+Game\+Data}} \mbox{\hyperlink{classArcade_1_1Nibbler_a4f7117a7599e11a5af6c7ee6b18e303d}{get\+\_\+game\+\_\+data}} ()
+\item 
+\mbox{\Hypertarget{classArcade_1_1Nibbler_ae00af1fc844cc15cb0b0ece802339717}\label{classArcade_1_1Nibbler_ae00af1fc844cc15cb0b0ece802339717}} 
+std\+::vector$<$ \mbox{\hyperlink{structIInfo_1_1DataInfo}{IInfo\+::\+Data\+Info}} $>$ {\bfseries read\+\_\+file} (std\+::string map\+\_\+path)
+\item 
+Arcade\+::\+PROTO \mbox{\hyperlink{classArcade_1_1Nibbler_a9ba567884d7b93ba2f005442197ffe65}{get\+\_\+lib\+\_\+name}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classArcade_1_1Nibbler_a0fe619e2fdd94766f734e9cd814d8073}\label{classArcade_1_1Nibbler_a0fe619e2fdd94766f734e9cd814d8073}} 
+\mbox{\hyperlink{classIInfo_1_1GameData}{IInfo\+::\+Game\+Data}} {\bfseries \+\_\+data}
+\item 
+\mbox{\Hypertarget{classArcade_1_1Nibbler_accf6dcebdbe26fb06183ddce74681d54}\label{classArcade_1_1Nibbler_accf6dcebdbe26fb06183ddce74681d54}} 
+std\+::vector$<$ std\+::pair$<$ int, int $>$ $>$ {\bfseries \+\_\+body\+\_\+pos}
+\item 
+\mbox{\Hypertarget{classArcade_1_1Nibbler_a1d9ab545b61c8a34eef81064febdd23f}\label{classArcade_1_1Nibbler_a1d9ab545b61c8a34eef81064febdd23f}} 
+std\+::pair$<$ int, int $>$ {\bfseries \+\_\+prev\+\_\+headpos}
+\item 
+\mbox{\Hypertarget{classArcade_1_1Nibbler_ad27a7e8630bf7ce7f01de802e2459399}\label{classArcade_1_1Nibbler_ad27a7e8630bf7ce7f01de802e2459399}} 
+char {\bfseries \+\_\+snake\+\_\+head}
+\item 
+\mbox{\Hypertarget{classArcade_1_1Nibbler_a99de0b77b04aa913b32a984d7fe03a69}\label{classArcade_1_1Nibbler_a99de0b77b04aa913b32a984d7fe03a69}} 
+char {\bfseries \+\_\+snake\+\_\+body}
+\item 
+\mbox{\Hypertarget{classArcade_1_1Nibbler_ac60872f5470a3cf7f13eeaf8019b2101}\label{classArcade_1_1Nibbler_ac60872f5470a3cf7f13eeaf8019b2101}} 
+char {\bfseries \+\_\+snake\+\_\+tail}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classArcade_1_1Nibbler_a5cfc6fee7c7d325dd5ec00d77473bd92}\label{classArcade_1_1Nibbler_a5cfc6fee7c7d325dd5ec00d77473bd92}} 
+\index{Arcade::Nibbler@{Arcade::Nibbler}!character\_handler@{character\_handler}}
+\index{character\_handler@{character\_handler}!Arcade::Nibbler@{Arcade::Nibbler}}
+\doxysubsubsection{\texorpdfstring{character\_handler()}{character\_handler()}}
+{\footnotesize\ttfamily void Arcade\+::\+Nibbler\+::character\+\_\+handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classIGame}{IGame}}.
+
+\mbox{\Hypertarget{classArcade_1_1Nibbler_abb6fd369aa5d6ae8cec00998c3a00f4d}\label{classArcade_1_1Nibbler_abb6fd369aa5d6ae8cec00998c3a00f4d}} 
+\index{Arcade::Nibbler@{Arcade::Nibbler}!end\_handler@{end\_handler}}
+\index{end\_handler@{end\_handler}!Arcade::Nibbler@{Arcade::Nibbler}}
+\doxysubsubsection{\texorpdfstring{end\_handler()}{end\_handler()}}
+{\footnotesize\ttfamily void Arcade\+::\+Nibbler\+::end\+\_\+handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classIGame}{IGame}}.
+
+\mbox{\Hypertarget{classArcade_1_1Nibbler_a36d6a4a4f269a4fba67b6e09a11f48c0}\label{classArcade_1_1Nibbler_a36d6a4a4f269a4fba67b6e09a11f48c0}} 
+\index{Arcade::Nibbler@{Arcade::Nibbler}!engine@{engine}}
+\index{engine@{engine}!Arcade::Nibbler@{Arcade::Nibbler}}
+\doxysubsubsection{\texorpdfstring{engine()}{engine()}}
+{\footnotesize\ttfamily void Arcade\+::\+Nibbler\+::engine (\begin{DoxyParamCaption}\item[{Arcade\+::\+KEYS}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classIGame}{IGame}}.
+
+\mbox{\Hypertarget{classArcade_1_1Nibbler_af1a82f6f27b599f3cf8beb2e1662d341}\label{classArcade_1_1Nibbler_af1a82f6f27b599f3cf8beb2e1662d341}} 
+\index{Arcade::Nibbler@{Arcade::Nibbler}!game\_over@{game\_over}}
+\index{game\_over@{game\_over}!Arcade::Nibbler@{Arcade::Nibbler}}
+\doxysubsubsection{\texorpdfstring{game\_over()}{game\_over()}}
+{\footnotesize\ttfamily void Arcade\+::\+Nibbler\+::game\+\_\+over (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classIGame}{IGame}}.
+
+\mbox{\Hypertarget{classArcade_1_1Nibbler_a4f7117a7599e11a5af6c7ee6b18e303d}\label{classArcade_1_1Nibbler_a4f7117a7599e11a5af6c7ee6b18e303d}} 
+\index{Arcade::Nibbler@{Arcade::Nibbler}!get\_game\_data@{get\_game\_data}}
+\index{get\_game\_data@{get\_game\_data}!Arcade::Nibbler@{Arcade::Nibbler}}
+\doxysubsubsection{\texorpdfstring{get\_game\_data()}{get\_game\_data()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classIInfo_1_1GameData}{IInfo\+::\+Game\+Data}} Arcade\+::\+Nibbler\+::get\+\_\+game\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classIGame}{IGame}}.
+
+\mbox{\Hypertarget{classArcade_1_1Nibbler_a9ba567884d7b93ba2f005442197ffe65}\label{classArcade_1_1Nibbler_a9ba567884d7b93ba2f005442197ffe65}} 
+\index{Arcade::Nibbler@{Arcade::Nibbler}!get\_lib\_name@{get\_lib\_name}}
+\index{get\_lib\_name@{get\_lib\_name}!Arcade::Nibbler@{Arcade::Nibbler}}
+\doxysubsubsection{\texorpdfstring{get\_lib\_name()}{get\_lib\_name()}}
+{\footnotesize\ttfamily Arcade\+::\+PROTO Arcade\+::\+Nibbler\+::get\+\_\+lib\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classIGame}{IGame}}.
+
+\mbox{\Hypertarget{classArcade_1_1Nibbler_a34ec3af9ae3ae4da950a01b62bb9759c}\label{classArcade_1_1Nibbler_a34ec3af9ae3ae4da950a01b62bb9759c}} 
+\index{Arcade::Nibbler@{Arcade::Nibbler}!getkey@{getkey}}
+\index{getkey@{getkey}!Arcade::Nibbler@{Arcade::Nibbler}}
+\doxysubsubsection{\texorpdfstring{getkey()}{getkey()}}
+{\footnotesize\ttfamily void Arcade\+::\+Nibbler\+::getkey (\begin{DoxyParamCaption}\item[{Arcade\+::\+KEYS}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classIGame}{IGame}}.
+
+\mbox{\Hypertarget{classArcade_1_1Nibbler_aae5f026d2a7d11d34002cc7017556c18}\label{classArcade_1_1Nibbler_aae5f026d2a7d11d34002cc7017556c18}} 
+\index{Arcade::Nibbler@{Arcade::Nibbler}!init@{init}}
+\index{init@{init}!Arcade::Nibbler@{Arcade::Nibbler}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Arcade\+::\+Nibbler\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classIGame}{IGame}}.
+
+\mbox{\Hypertarget{classArcade_1_1Nibbler_a98aa1e59182a39a3439cecbdecdedda7}\label{classArcade_1_1Nibbler_a98aa1e59182a39a3439cecbdecdedda7}} 
+\index{Arcade::Nibbler@{Arcade::Nibbler}!points\_handler@{points\_handler}}
+\index{points\_handler@{points\_handler}!Arcade::Nibbler@{Arcade::Nibbler}}
+\doxysubsubsection{\texorpdfstring{points\_handler()}{points\_handler()}}
+{\footnotesize\ttfamily void Arcade\+::\+Nibbler\+::points\+\_\+handler (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classIGame}{IGame}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/zesor/\+Tek/\+Semestre4/\+OOP/\+Arcade/ouuuh/includes/Nibbler.\+hpp\end{DoxyCompactItemize}

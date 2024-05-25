@@ -1,0 +1,50 @@
+\hypertarget{MenuScene_8hpp_source}{}\doxysection{Menu\+Scene.\+hpp}
+\label{MenuScene_8hpp_source}\index{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/gui/include/MenuScene.hpp@{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/gui/include/MenuScene.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{** EPITECH PROJECT, 2022}}
+\DoxyCodeLine{3 \textcolor{comment}{** B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson}}
+\DoxyCodeLine{4 \textcolor{comment}{** File description:}}
+\DoxyCodeLine{5 \textcolor{comment}{** MenuScene}}
+\DoxyCodeLine{6 \textcolor{comment}{*/}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef MENUSCENE\_HPP\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{    \#define MENUSCENE\_HPP\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{    \#include <vector>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{    \#include "{}Button.hpp"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{    \#include "{}AScene.hpp"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{enum} BUTTONMENU \{}
+\DoxyCodeLine{16     STARTBUTTON,}
+\DoxyCodeLine{17     SETTINGSBUTTON,}
+\DoxyCodeLine{18     EXITBUTTON}
+\DoxyCodeLine{19 \};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{classMenuScene}{MenuScene}} : \textcolor{keyword}{public} \mbox{\hyperlink{classAScene}{AScene}} \{}
+\DoxyCodeLine{22     \textcolor{keyword}{public}:}
+\DoxyCodeLine{23         \mbox{\hyperlink{classMenuScene}{MenuScene}}(std::shared\_ptr<Settings> settings);}
+\DoxyCodeLine{24         \mbox{\hyperlink{classMenuScene}{\string~MenuScene}}();}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26         sf::Sprite getSkySprite() \textcolor{keyword}{const};}
+\DoxyCodeLine{27         sf::Sprite getSunnySprite() \textcolor{keyword}{const};}
+\DoxyCodeLine{28         std::vector<std::shared\_ptr<Button>> getButtonList() \textcolor{keyword}{const};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{31     \textcolor{keyword}{private}:}
+\DoxyCodeLine{32         \textcolor{keywordtype}{void} exitScene();}
+\DoxyCodeLine{33         \textcolor{keywordtype}{void} startScene();}
+\DoxyCodeLine{34         \textcolor{keywordtype}{void} settingsScene();}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36         sf::Texture \_textureSky;}
+\DoxyCodeLine{37         sf::Sprite \_spriteSky;}
+\DoxyCodeLine{38         sf::Texture \_textureSunny;}
+\DoxyCodeLine{39         sf::Sprite \_spriteSunny;}
+\DoxyCodeLine{40         sf::Texture \_textureButton;}
+\DoxyCodeLine{41         std::vector<std::shared\_ptr<Button>> \_buttons;}
+\DoxyCodeLine{42 \};}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !MENUSCENE\_HPP\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

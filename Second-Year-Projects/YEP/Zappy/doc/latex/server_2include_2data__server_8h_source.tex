@@ -1,0 +1,77 @@
+\hypertarget{server_2include_2data__server_8h_source}{}\doxysection{data\+\_\+server.\+h}
+\label{server_2include_2data__server_8h_source}\index{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/server/include/data\_server.h@{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/server/include/data\_server.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{** EPITECH PROJECT, 2022}}
+\DoxyCodeLine{3 \textcolor{comment}{** B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson}}
+\DoxyCodeLine{4 \textcolor{comment}{** File description:}}
+\DoxyCodeLine{5 \textcolor{comment}{** data\_server}}
+\DoxyCodeLine{6 \textcolor{comment}{*/}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef DATA\_SERVER\_H\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define DATA\_SERVER\_H\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define CODE\_MAX\_LENGH 5}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define RECEIVE\_CODE\_LENGH 10}}
+\DoxyCodeLine{13 \textcolor{comment}{// ! do not use the define bellow it is a temporary define}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define MAX\_PLAYERS 24}}
+\DoxyCodeLine{15 \textcolor{comment}{//TODO define for MAX\_PLAYERS that take clientsNb * nb\_team}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{comment}{// ! do not use the define bellow it is a temporary define}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define MAX\_CASES 100}}
+\DoxyCodeLine{19 \textcolor{comment}{//TODO define for MAX\_CASES that take width * heigh}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{typedef} \textcolor{keyword}{enum}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23     DEFAULT,}
+\DoxyCodeLine{24     MOVE\_FORWARD,}
+\DoxyCodeLine{25     RIGHT,}
+\DoxyCodeLine{26     LEFT,}
+\DoxyCodeLine{27     BROADCAST,}
+\DoxyCodeLine{28     FORK,}
+\DoxyCodeLine{29     EJECT,}
+\DoxyCodeLine{30     INCANTATION,}
+\DoxyCodeLine{31 \} player\_actions;}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structreceive__gui__s}{receive\_gui\_s}}}
+\DoxyCodeLine{34 \{}
+\DoxyCodeLine{35     \textcolor{keywordtype}{char} code[RECEIVE\_CODE\_LENGH];}
+\DoxyCodeLine{36 \} \mbox{\hyperlink{structreceive__gui__s}{receive\_gui\_t}};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structplayer__data__s}{player\_data\_s}}}
+\DoxyCodeLine{39 \{}
+\DoxyCodeLine{40     \textcolor{keywordtype}{int} pos\_x;}
+\DoxyCodeLine{41     \textcolor{keywordtype}{int} pos\_y;}
+\DoxyCodeLine{42     \textcolor{keywordtype}{int} player\_id;}
+\DoxyCodeLine{43     \textcolor{keywordtype}{int} team\_id;}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     player\_actions action\_id;}
+\DoxyCodeLine{46     \textcolor{keywordtype}{int} level;}
+\DoxyCodeLine{47 \} \mbox{\hyperlink{structplayer__data__s}{player\_data\_t}};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structcases__data__s}{cases\_data\_s}}}
+\DoxyCodeLine{50 \{}
+\DoxyCodeLine{51     \textcolor{keywordtype}{int} pos\_x;}
+\DoxyCodeLine{52     \textcolor{keywordtype}{int} pos\_y;}
+\DoxyCodeLine{53     \textcolor{keywordtype}{int} nb\_food;}
+\DoxyCodeLine{54     \textcolor{keywordtype}{int} nb\_linemate;}
+\DoxyCodeLine{55     \textcolor{keywordtype}{int} nb\_deraumere;}
+\DoxyCodeLine{56     \textcolor{keywordtype}{int} nb\_sibur;}
+\DoxyCodeLine{57     \textcolor{keywordtype}{int} nb\_mendiane;}
+\DoxyCodeLine{58     \textcolor{keywordtype}{int} nb\_phiras;}
+\DoxyCodeLine{59     \textcolor{keywordtype}{int} nb\_thystame;}
+\DoxyCodeLine{60 \} \mbox{\hyperlink{structcases__data__s}{cases\_data\_t}};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structdata__server__to__gui__s}{data\_server\_to\_gui\_s}}}
+\DoxyCodeLine{63 \{}
+\DoxyCodeLine{64     \textcolor{keywordtype}{char} code[CODE\_MAX\_LENGH];}
+\DoxyCodeLine{65     \textcolor{keywordtype}{int} number\_cases;}
+\DoxyCodeLine{66     \mbox{\hyperlink{structcases__data__s}{cases\_data\_t}} cases[MAX\_CASES];}
+\DoxyCodeLine{67     \textcolor{keywordtype}{int} number\_players;}
+\DoxyCodeLine{68     \mbox{\hyperlink{structplayer__data__s}{player\_data\_t}} players[MAX\_PLAYERS];}
+\DoxyCodeLine{69 \} \mbox{\hyperlink{structdata__server__to__gui__s}{data\_server\_to\_gui\_t}};}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !DATA\_SERVER\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

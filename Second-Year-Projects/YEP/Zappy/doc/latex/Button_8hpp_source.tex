@@ -1,0 +1,61 @@
+\hypertarget{Button_8hpp_source}{}\doxysection{Button.\+hpp}
+\label{Button_8hpp_source}\index{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/gui/include/Button.hpp@{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/gui/include/Button.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{** EPITECH PROJECT, 2022}}
+\DoxyCodeLine{3 \textcolor{comment}{** B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson}}
+\DoxyCodeLine{4 \textcolor{comment}{** File description:}}
+\DoxyCodeLine{5 \textcolor{comment}{** Button}}
+\DoxyCodeLine{6 \textcolor{comment}{*/}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef BUTTON\_HPP\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{    \#define BUTTON\_HPP\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{    \#include <utility>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{    \#include <string>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{    \#include <iostream>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{    \#include <memory>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{    \#include <functional>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{    \#include "{}Settings.hpp"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{classButton}{Button}} \{}
+\DoxyCodeLine{20     \textcolor{keyword}{enum} STATUS \{}
+\DoxyCodeLine{21         DEFAULT,}
+\DoxyCodeLine{22         MOUSEOVER,}
+\DoxyCodeLine{23         SELECTED}
+\DoxyCodeLine{24     \};}
+\DoxyCodeLine{25     \textcolor{keyword}{public}:}
+\DoxyCodeLine{26         \mbox{\hyperlink{classButton}{Button}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, std::shared\_ptr<sf::Texture> texture, std::pair<int, int> position, std::vector<std::function<\textcolor{keywordtype}{void}(\textcolor{keywordtype}{void})>> callbacks);}
+\DoxyCodeLine{27         \mbox{\hyperlink{classButton}{\string~Button}}();}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29         \textcolor{keywordtype}{int} getId() \textcolor{keyword}{const};}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31         \textcolor{keywordtype}{void} setPosition(std::pair<int, int> position);}
+\DoxyCodeLine{32         std::pair<int, int> getPosition() \textcolor{keyword}{const};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34         \textcolor{keywordtype}{void} setStatus(Button::STATUS status);}
+\DoxyCodeLine{35         Button::STATUS getStatus() \textcolor{keyword}{const};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37         \textcolor{keywordtype}{void} draw();}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39         \textcolor{keywordtype}{bool} isMouseOverButton(std::pair<int, int> mousePosition);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41         \textcolor{keywordtype}{void} onclick(std::pair<int, int> mousePosition);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43         sf::Sprite getSprite() \textcolor{keyword}{const};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{46     \textcolor{keyword}{private}:}
+\DoxyCodeLine{47         \textcolor{keywordtype}{int} \_id;}
+\DoxyCodeLine{48         Button::STATUS \_status;}
+\DoxyCodeLine{49         std::pair<int, int> \_position;}
+\DoxyCodeLine{50         std::shared\_ptr<sf::Texture> \_texture;}
+\DoxyCodeLine{51         sf::Sprite \_sprite;}
+\DoxyCodeLine{52         std::function<void(\textcolor{keywordtype}{void})> \_callback;}
+\DoxyCodeLine{53 \};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !BUTTON\_HPP\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

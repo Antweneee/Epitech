@@ -1,0 +1,53 @@
+\hypertarget{Nibbler_8hpp_source}{}\doxysection{Nibbler.\+hpp}
+\label{Nibbler_8hpp_source}\index{/home/zesor/Tek/Semestre4/OOP/Arcade/ouuuh/includes/Nibbler.hpp@{/home/zesor/Tek/Semestre4/OOP/Arcade/ouuuh/includes/Nibbler.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{** EPITECH PROJECT, 2022}}
+\DoxyCodeLine{3 \textcolor{comment}{** B-\/OOP-\/400-\/PAR-\/4-\/1-\/arcade-\/valentin.fouillet}}
+\DoxyCodeLine{4 \textcolor{comment}{** File description:}}
+\DoxyCodeLine{5 \textcolor{comment}{** Nibbler}}
+\DoxyCodeLine{6 \textcolor{comment}{*/}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef NIBBLER\_HPP\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define NIBBLER\_HPP\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}IGame.hpp"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{namespace }Arcade \{}
+\DoxyCodeLine{14     \textcolor{keyword}{class }\mbox{\hyperlink{classArcade_1_1Nibbler}{Nibbler}} : \textcolor{keyword}{public} \mbox{\hyperlink{classIGame}{IGame}}}
+\DoxyCodeLine{15     \{}
+\DoxyCodeLine{16         \textcolor{keyword}{public}:}
+\DoxyCodeLine{17             \mbox{\hyperlink{classArcade_1_1Nibbler}{Nibbler}}(std::string map\_path = \textcolor{stringliteral}{"{}config/Nibbler\_map.txt"{}});}
+\DoxyCodeLine{18             \mbox{\hyperlink{classArcade_1_1Nibbler}{\string~Nibbler}}();}
+\DoxyCodeLine{19             \textcolor{keywordtype}{void} init();}
+\DoxyCodeLine{20             \textcolor{keywordtype}{void} getkey(Arcade::KEYS key);}
+\DoxyCodeLine{21             \textcolor{keywordtype}{void} game\_over();}
+\DoxyCodeLine{22             \textcolor{keywordtype}{void} character\_handler();}
+\DoxyCodeLine{23             \textcolor{keywordtype}{void} end\_handler();}
+\DoxyCodeLine{24             \textcolor{keywordtype}{void} points\_handler();}
+\DoxyCodeLine{25             \textcolor{keywordtype}{void} engine(Arcade::KEYS);}
+\DoxyCodeLine{26             \textcolor{keywordtype}{void} debug();}
+\DoxyCodeLine{27             \mbox{\hyperlink{classIInfo_1_1GameData}{IInfo::GameData}} get\_game\_data();}
+\DoxyCodeLine{28             std::vector<IInfo::DataInfo> read\_file(std::string map\_path);}
+\DoxyCodeLine{29             Arcade::PROTO get\_lib\_name() \{ \textcolor{keywordflow}{return} Arcade::PROTO::NIBBLER; \};}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31             \mbox{\hyperlink{classIInfo_1_1GameData}{IInfo::GameData}} \_data;}
+\DoxyCodeLine{32             std::vector<std::pair<int, int>> \_body\_pos;}
+\DoxyCodeLine{33             std::pair<int, int> \_prev\_headpos;}
+\DoxyCodeLine{34             \textcolor{keywordtype}{char} \_snake\_head;}
+\DoxyCodeLine{35             \textcolor{keywordtype}{char} \_snake\_body;}
+\DoxyCodeLine{36             \textcolor{keywordtype}{char} \_snake\_tail;}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38         \textcolor{keyword}{private}:}
+\DoxyCodeLine{39         \textcolor{keyword}{protected}:}
+\DoxyCodeLine{40     \};}
+\DoxyCodeLine{41 \}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \mbox{\hyperlink{classArcade_1_1Nibbler}{Arcade::Nibbler}} *get\_game();}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !NIBBLER\_HPP\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

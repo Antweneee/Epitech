@@ -1,0 +1,38 @@
+\hypertarget{IDisplay_8hpp_source}{}\doxysection{IDisplay.\+hpp}
+\label{IDisplay_8hpp_source}\index{/home/zesor/Tek/Semestre4/OOP/Arcade/ouuuh/includes/IDisplay.hpp@{/home/zesor/Tek/Semestre4/OOP/Arcade/ouuuh/includes/IDisplay.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{** EPITECH PROJECT, 2022}}
+\DoxyCodeLine{3 \textcolor{comment}{** B-\/OOP-\/400-\/PAR-\/4-\/1-\/arcade-\/valentin.fouillet}}
+\DoxyCodeLine{4 \textcolor{comment}{** File description:}}
+\DoxyCodeLine{5 \textcolor{comment}{** IDisplay}}
+\DoxyCodeLine{6 \textcolor{comment}{*/}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef IDisplay\_HPP\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define IDisplay\_HPP\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}enum.hpp"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}includes.hpp"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}IInfo.hpp"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{classIDisplay}{IDisplay}} \{ \textcolor{comment}{//DISPLAY}}
+\DoxyCodeLine{16     \textcolor{keyword}{public}:}
+\DoxyCodeLine{17         \textcolor{keyword}{virtual} \mbox{\hyperlink{classIDisplay}{\string~IDisplay}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{18         \textcolor{keyword}{virtual} Arcade::KEYS get\_key() = 0;}
+\DoxyCodeLine{19         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} draw(\mbox{\hyperlink{classIInfo_1_1GameData}{IInfo::GameData}}\&) = 0;}
+\DoxyCodeLine{20         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} init() = 0;}
+\DoxyCodeLine{21         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} window\_handler() = 0;}
+\DoxyCodeLine{22         \textcolor{keyword}{virtual} Arcade::PROTO get\_lib\_name() = 0;}
+\DoxyCodeLine{23         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} clearr() = 0;}
+\DoxyCodeLine{24         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} refreshh() = 0;}
+\DoxyCodeLine{25         \textcolor{keyword}{virtual} std::tuple<Arcade::PROTO, Arcade::PROTO> my\_menu() = 0;}
+\DoxyCodeLine{26         \textcolor{keyword}{virtual} std::string get\_name() = 0;}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{29     \textcolor{keyword}{private}:}
+\DoxyCodeLine{30 \};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* IDisplay\_HPP\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

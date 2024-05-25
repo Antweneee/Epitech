@@ -1,0 +1,82 @@
+\hypertarget{define_8h_source}{}\doxysection{define.\+h}
+\label{define_8h_source}\index{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/ai/includes/define.h@{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/ai/includes/define.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{** EPITECH PROJECT, 2022}}
+\DoxyCodeLine{3 \textcolor{comment}{** B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson}}
+\DoxyCodeLine{4 \textcolor{comment}{** File description:}}
+\DoxyCodeLine{5 \textcolor{comment}{** define}}
+\DoxyCodeLine{6 \textcolor{comment}{*/}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef DEFINE\_H\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{    \#define DEFINE\_H\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{    \#define HELP "{}USAGE: ./zappy\_ai -\/p port -\/n name -\/h machine\(\backslash\)n\(\backslash\)t \(\backslash\)}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{port\(\backslash\)t  is the port number\(\backslash\)n\(\backslash\)t name\(\backslash\)t  is the name of the team\(\backslash\)n\(\backslash\)t \(\backslash\)}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{machine  is the name of the machine; localhost by default\(\backslash\)n"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{    \#define NBR\_OF\_ELEMENT 7}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{    \#define NBR\_OF\_LOOK\_ELEMENT 8}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{    \#define MAX\_TEAM\_NAME\_LENGTH 16}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{    \#define FORWARD "{}Forward\(\backslash\)n"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{    \#define RIGHT "{}Right\(\backslash\)n"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{    \#define LEFT "{}Left\(\backslash\)n"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{    \#define LOOK "{}Look\(\backslash\)n"{}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{    \#define INVENTORY "{}Inventory\(\backslash\)n"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{    \#define BROADCAST "{}Broadcast "{}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{    \#define CONNECT\_NBR "{}Connect\_nbr\(\backslash\)n"{}}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{    \#define FORK "{}Fork\(\backslash\)n"{}}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{    \#define EJECT "{}Eject\(\backslash\)n"{}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{    \#define TAKE "{}Take "{}}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{    \#define SET "{}Set "{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{    \#define INCANTATION "{}Incantation\(\backslash\)n"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{    \#define EAT\_FOOD "{}food\(\backslash\)n"{}}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{35 \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} requirement\_inventory[7][7] = \{}
+\DoxyCodeLine{36     \{0, 1, 0, 0, 0, 0, 0\},   \textcolor{comment}{//1-\/>2}}
+\DoxyCodeLine{37     \{0, 1, 1, 1, 0, 0, 0\},   \textcolor{comment}{//2-\/>3}}
+\DoxyCodeLine{38     \{0, 2, 0, 1, 0, 2, 0\},   \textcolor{comment}{//3-\/>4}}
+\DoxyCodeLine{39     \{0, 1, 1, 2, 0, 1, 0\},   \textcolor{comment}{//4-\/>5}}
+\DoxyCodeLine{40     \{0, 1, 2, 1, 3, 0, 0\},   \textcolor{comment}{//5-\/>6}}
+\DoxyCodeLine{41     \{0, 1, 2, 3, 0, 1, 0\},   \textcolor{comment}{//6-\/>7}}
+\DoxyCodeLine{42     \{0, 2, 2, 2, 2, 2, 1\},   \textcolor{comment}{//7-\/>8}}
+\DoxyCodeLine{43 \};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} requirement\_tile[7][8] = \{}
+\DoxyCodeLine{46     \{1, 0, 1, 0, 0, 0, 0, 0\},   \textcolor{comment}{//1-\/>2}}
+\DoxyCodeLine{47     \{2, 0, 1, 1, 1, 0, 0, 0\},   \textcolor{comment}{//2-\/>3}}
+\DoxyCodeLine{48     \{2, 0, 2, 0, 1, 0, 2, 0\},   \textcolor{comment}{//3-\/>4}}
+\DoxyCodeLine{49     \{4, 0, 1, 1, 2, 0, 1, 0\},   \textcolor{comment}{//4-\/>5}}
+\DoxyCodeLine{50     \{4, 0, 1, 2, 1, 3, 0, 0\},   \textcolor{comment}{//5-\/>6}}
+\DoxyCodeLine{51     \{6, 0, 1, 2, 3, 0, 1, 0\},   \textcolor{comment}{//6-\/>7}}
+\DoxyCodeLine{52     \{6, 0, 2, 2, 2, 2, 2, 1\},   \textcolor{comment}{//7-\/>8}}
+\DoxyCodeLine{53 \};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{56     FOOD,}
+\DoxyCodeLine{57     LINEMATE,}
+\DoxyCodeLine{58     DERAUMERE,}
+\DoxyCodeLine{59     SIBUR,}
+\DoxyCodeLine{60     MENDIANE,}
+\DoxyCodeLine{61     PHIRAS,}
+\DoxyCodeLine{62     THYSTAME}
+\DoxyCodeLine{63 \} resource\_e;}
+\DoxyCodeLine{64 \textcolor{comment}{// inventory}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{68     PLAYER\_L,}
+\DoxyCodeLine{69     FOOD\_L,}
+\DoxyCodeLine{70     LINEMATE\_L,}
+\DoxyCodeLine{71     DERAUMERE\_L,}
+\DoxyCodeLine{72     SIBUR\_L,}
+\DoxyCodeLine{73     MENDIANE\_L,}
+\DoxyCodeLine{74     PHIRAS\_L,}
+\DoxyCodeLine{75     THYSTAME\_L}
+\DoxyCodeLine{76 \} look\_e;}
+\DoxyCodeLine{77 \textcolor{comment}{// requirement}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !DEFINE\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

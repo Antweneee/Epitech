@@ -1,0 +1,44 @@
+\hypertarget{level__command_8h_source}{}\doxysection{level\+\_\+command.\+h}
+\label{level__command_8h_source}\index{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/ai/includes/level\_command.h@{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/ai/includes/level\_command.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{** EPITECH PROJECT, 2022}}
+\DoxyCodeLine{3 \textcolor{comment}{** B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson}}
+\DoxyCodeLine{4 \textcolor{comment}{** File description:}}
+\DoxyCodeLine{5 \textcolor{comment}{** level\_command}}
+\DoxyCodeLine{6 \textcolor{comment}{*/}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef LEVEL\_COMMAND\_H\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{    \#define LEVEL\_COMMAND\_H\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{    \#include "{}ai\_info.h"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{    \#include <stdbool.h>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keywordtype}{bool} first\_level(\textcolor{keyword}{struct} \mbox{\hyperlink{structai__info}{ai\_info}} *ai);}
+\DoxyCodeLine{14 \textcolor{keywordtype}{bool} second\_level(\textcolor{keyword}{struct} \mbox{\hyperlink{structai__info}{ai\_info}} *ai);}
+\DoxyCodeLine{15 \textcolor{keywordtype}{bool} third\_level(\textcolor{keyword}{struct} \mbox{\hyperlink{structai__info}{ai\_info}} *ai);}
+\DoxyCodeLine{16 \textcolor{keywordtype}{bool} fourth\_level(\textcolor{keyword}{struct} \mbox{\hyperlink{structai__info}{ai\_info}} *ai);}
+\DoxyCodeLine{17 \textcolor{keywordtype}{bool} fifth\_level(\textcolor{keyword}{struct} \mbox{\hyperlink{structai__info}{ai\_info}} *ai);}
+\DoxyCodeLine{18 \textcolor{keywordtype}{bool} sixt\_level(\textcolor{keyword}{struct} \mbox{\hyperlink{structai__info}{ai\_info}} *ai);}
+\DoxyCodeLine{19 \textcolor{keywordtype}{bool} seventh\_level(\textcolor{keyword}{struct} \mbox{\hyperlink{structai__info}{ai\_info}} *ai);}
+\DoxyCodeLine{20 \textcolor{keywordtype}{bool} heigth\_level(\textcolor{keyword}{struct} \mbox{\hyperlink{structai__info}{ai\_info}} *ai);}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structlevel__command__s}{level\_command\_s}} \{}
+\DoxyCodeLine{23     \textcolor{keywordtype}{int} actual\_level;}
+\DoxyCodeLine{24     bool (*functions)(\textcolor{keyword}{struct }\mbox{\hyperlink{structai__info}{ai\_info}}*);}
+\DoxyCodeLine{25 \} \mbox{\hyperlink{structlevel__command__s}{level\_command\_t}};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{static} \textcolor{keyword}{const} \mbox{\hyperlink{structlevel__command__s}{level\_command\_t}} LEVEL\_COMMAND[] = \{}
+\DoxyCodeLine{28     \{.actual\_level = 1, .functions = first\_level\},}
+\DoxyCodeLine{29     \{.actual\_level = 2, .functions = second\_level\},}
+\DoxyCodeLine{30     \{.actual\_level = 3, .functions = third\_level\},}
+\DoxyCodeLine{31     \{.actual\_level = 4, .functions = fourth\_level\},}
+\DoxyCodeLine{32     \{.actual\_level = 5, .functions = fifth\_level\},}
+\DoxyCodeLine{33     \{.actual\_level = 6, .functions = sixt\_level\},}
+\DoxyCodeLine{34     \{.actual\_level = 7, .functions = seventh\_level\},}
+\DoxyCodeLine{35     \{.actual\_level = 8, .functions = heigth\_level\},}
+\DoxyCodeLine{36 \};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !LEVEL\_COMMAND\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

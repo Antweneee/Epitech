@@ -1,0 +1,12 @@
+point = <Point (42, -42)>
+vertex = <Vertex (0, 1, 2)>
+point = <Point (42, 42)>
+vertex = <Vertex (10, 1, 2)>
+point = <Point (0, 0)>
+vertex = <Vertex (0, 0, 0)>
+point = <Point (10000, 10000)>
+vertex = <Vertex (550, 551, 552)>
+point = <Point (2, -999992)>
+vertex = <Vertex (0, 1, 2)>
+point = <Point (98765432, -98765432)>
+vertex = <Vertex (98765432, 98765432, 98765432)>

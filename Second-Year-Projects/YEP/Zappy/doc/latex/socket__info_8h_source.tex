@@ -1,0 +1,32 @@
+\hypertarget{socket__info_8h_source}{}\doxysection{socket\+\_\+info.\+h}
+\label{socket__info_8h_source}\index{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/ai/includes/socket\_info.h@{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/ai/includes/socket\_info.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{** EPITECH PROJECT, 2022}}
+\DoxyCodeLine{3 \textcolor{comment}{** B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson}}
+\DoxyCodeLine{4 \textcolor{comment}{** File description:}}
+\DoxyCodeLine{5 \textcolor{comment}{** socket\_info}}
+\DoxyCodeLine{6 \textcolor{comment}{*/}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef SOCKET\_INFO\_H\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{    \#define SOCKET\_INFO\_H\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{    \#include <stdint.h>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{    \#include <sys/types.h>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{    \#include <sys/socket.h>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{    \#include <arpa/inet.h>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{    \#include <sys/select.h>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{struct }\mbox{\hyperlink{structsocket__info}{socket\_info}} \{}
+\DoxyCodeLine{17     \textcolor{keywordtype}{int} client\_fd;}
+\DoxyCodeLine{18     \textcolor{keywordtype}{int} port;}
+\DoxyCodeLine{19     \textcolor{keywordtype}{char} ip[8];}
+\DoxyCodeLine{20     \textcolor{keyword}{struct }sockaddr\_in servaddr;}
+\DoxyCodeLine{21     fd\_set set\_read;}
+\DoxyCodeLine{22     fd\_set set\_write;}
+\DoxyCodeLine{23     fd\_set set\_exeption;}
+\DoxyCodeLine{24 \};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !SOCKET\_INFO\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

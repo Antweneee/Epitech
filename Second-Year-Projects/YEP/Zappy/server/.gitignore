@@ -1,0 +1,6 @@
+.vscode
+unit_tests
+*.gc*
+*.o
+a.out
+zappy_server

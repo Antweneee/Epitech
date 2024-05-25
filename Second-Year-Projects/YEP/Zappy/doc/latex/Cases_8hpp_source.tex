@@ -1,0 +1,76 @@
+\hypertarget{Cases_8hpp_source}{}\doxysection{Cases.\+hpp}
+\label{Cases_8hpp_source}\index{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/gui/include/Cases.hpp@{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/gui/include/Cases.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{** EPITECH PROJECT, 2022}}
+\DoxyCodeLine{3 \textcolor{comment}{** B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson}}
+\DoxyCodeLine{4 \textcolor{comment}{** File description:}}
+\DoxyCodeLine{5 \textcolor{comment}{** Cases}}
+\DoxyCodeLine{6 \textcolor{comment}{*/}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef CASES\_HPP\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define CASES\_HPP\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}Drawable.hpp"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}data\_server.h"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classCases}{Cases}} : \textcolor{keyword}{public} \mbox{\hyperlink{classDrawable}{Drawable}}}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18     \textcolor{keyword}{public}:}
+\DoxyCodeLine{19         \mbox{\hyperlink{classCases}{Cases}}();}
+\DoxyCodeLine{20         \mbox{\hyperlink{classCases}{Cases}}(\mbox{\hyperlink{classCases}{Cases}} \textcolor{keyword}{const} \&cases);}
+\DoxyCodeLine{21         \mbox{\hyperlink{classCases}{Cases}}(\mbox{\hyperlink{structcases__data__s}{cases\_data\_t}} \textcolor{keyword}{const} \&data\_case);}
+\DoxyCodeLine{22         \mbox{\hyperlink{classCases}{\string~Cases}}();}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24         \textcolor{keywordtype}{void} handle\_case(sf::RenderWindow \&window);}
+\DoxyCodeLine{25         \textcolor{keywordtype}{void} is\_clicked(sf::Mouse \&mouse);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27         \textcolor{keywordtype}{int} get\_food()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} \_nb\_food;\}}
+\DoxyCodeLine{28         \textcolor{keywordtype}{int} get\_linemate()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} \_nb\_linemate;\}}
+\DoxyCodeLine{29         \textcolor{keywordtype}{int} get\_deraumere()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} \_nb\_deraumere;\}}
+\DoxyCodeLine{30         \textcolor{keywordtype}{int} get\_sibur()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} \_nb\_sibur;\}}
+\DoxyCodeLine{31         \textcolor{keywordtype}{int} get\_mendiane()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} \_nb\_mendiane;\}}
+\DoxyCodeLine{32         \textcolor{keywordtype}{int} get\_phiras()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} \_nb\_phiras;\}}
+\DoxyCodeLine{33         \textcolor{keywordtype}{int} get\_thystame()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} \_nb\_thystame;\}}
+\DoxyCodeLine{34         \textcolor{keywordtype}{int} get\_pos\_x()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} \_pos\_x; \}}
+\DoxyCodeLine{35         \textcolor{keywordtype}{int} get\_pos\_y()\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} \_pos\_y; \}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37         \textcolor{keywordtype}{void} set\_position(\textcolor{keywordtype}{int} pos\_x, \textcolor{keywordtype}{int} pos\_y) \{\_pos\_x = pos\_x;\_pos\_y = pos\_y;\}}
+\DoxyCodeLine{38         \textcolor{keywordtype}{void} set\_nb\_food(\textcolor{keywordtype}{int} nb\_food) \{\_nb\_food = nb\_food;\}}
+\DoxyCodeLine{39         \textcolor{keywordtype}{void} set\_nb\_linemate(\textcolor{keywordtype}{int} nb\_linemate) \{\_nb\_linemate = nb\_linemate;\}}
+\DoxyCodeLine{40         \textcolor{keywordtype}{void} set\_nb\_deraumere(\textcolor{keywordtype}{int} nb\_deraumere) \{\_nb\_deraumere = nb\_deraumere;\}}
+\DoxyCodeLine{41         \textcolor{keywordtype}{void} set\_nb\_sibur(\textcolor{keywordtype}{int} nb\_sibur) \{\_nb\_sibur = nb\_sibur;\}}
+\DoxyCodeLine{42         \textcolor{keywordtype}{void} set\_nb\_mendiane(\textcolor{keywordtype}{int} nb\_mendiane) \{\_nb\_mendiane = nb\_mendiane;\}}
+\DoxyCodeLine{43         \textcolor{keywordtype}{void} set\_nb\_phiras(\textcolor{keywordtype}{int} nb\_phiras) \{\_nb\_phiras = nb\_phiras;\}}
+\DoxyCodeLine{44         \textcolor{keywordtype}{void} set\_nb\_thystame(\textcolor{keywordtype}{int} nb\_thystame) \{\_nb\_thystame = nb\_thystame;\}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46         \mbox{\hyperlink{classCases}{Cases}} \&operator=(\textcolor{keyword}{const} \mbox{\hyperlink{classCases}{Cases}} \&cases) \{}
+\DoxyCodeLine{47             \_pos\_x = cases.\_pos\_x;}
+\DoxyCodeLine{48             \_pos\_y = cases.\_pos\_y;}
+\DoxyCodeLine{49             \_nb\_food = cases.\_nb\_food;}
+\DoxyCodeLine{50             \_nb\_linemate = cases.\_nb\_linemate;}
+\DoxyCodeLine{51             \_nb\_deraumere = cases.\_nb\_deraumere;}
+\DoxyCodeLine{52             \_nb\_sibur = cases.\_nb\_sibur;}
+\DoxyCodeLine{53             \_nb\_mendiane = cases.\_nb\_mendiane;}
+\DoxyCodeLine{54             \_nb\_phiras = cases.\_nb\_phiras;}
+\DoxyCodeLine{55             \_nb\_thystame = cases.\_nb\_thystame;}
+\DoxyCodeLine{56             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{57         \}}
+\DoxyCodeLine{58     \textcolor{keyword}{private}:}
+\DoxyCodeLine{59         \textcolor{keywordtype}{int} \_pos\_x;}
+\DoxyCodeLine{60         \textcolor{keywordtype}{int} \_pos\_y;}
+\DoxyCodeLine{61         \textcolor{keywordtype}{int} \_nb\_food;}
+\DoxyCodeLine{62         \textcolor{keywordtype}{int} \_nb\_linemate;}
+\DoxyCodeLine{63         \textcolor{keywordtype}{int} \_nb\_deraumere;}
+\DoxyCodeLine{64         \textcolor{keywordtype}{int} \_nb\_sibur;}
+\DoxyCodeLine{65         \textcolor{keywordtype}{int} \_nb\_mendiane;}
+\DoxyCodeLine{66         \textcolor{keywordtype}{int} \_nb\_phiras;}
+\DoxyCodeLine{67         \textcolor{keywordtype}{int} \_nb\_thystame;}
+\DoxyCodeLine{68 \};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !CASES\_HPP\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

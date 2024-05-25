@@ -1,0 +1,53 @@
+\hypertarget{command_8h_source}{}\doxysection{command.\+h}
+\label{command_8h_source}\index{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/server/include/command.h@{/home/zesor/Tek/Semestre4/Zappy/B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson/server/include/command.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{** EPITECH PROJECT, 2022}}
+\DoxyCodeLine{3 \textcolor{comment}{** B-\/YEP-\/410-\/PAR-\/4-\/1-\/zappy-\/thomas.willson}}
+\DoxyCodeLine{4 \textcolor{comment}{** File description:}}
+\DoxyCodeLine{5 \textcolor{comment}{** command}}
+\DoxyCodeLine{6 \textcolor{comment}{*/}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef COMMAND\_H\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define COMMAND\_H\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{    \#include "{}server.h"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{    \#include "{}game.h"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structserver__command__s}{server\_command\_s}}}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16     int (*function)(\mbox{\hyperlink{structclient__s}{client\_t}} *client, \mbox{\hyperlink{structserver__s}{server\_t}} *server, \mbox{\hyperlink{structmap__s}{map\_t}} **map);}
+\DoxyCodeLine{17 \} \mbox{\hyperlink{structserver__command__s}{server\_command\_t}};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structclient__command__s}{client\_command\_s}}}
+\DoxyCodeLine{20 \{}
+\DoxyCodeLine{21     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *command;}
+\DoxyCodeLine{22     int (*function)(\mbox{\hyperlink{structclient__s}{client\_t}} *client, \mbox{\hyperlink{structserver__s}{server\_t}} *server, \mbox{\hyperlink{structmap__s}{map\_t}} **map);}
+\DoxyCodeLine{23 \} \mbox{\hyperlink{structclient__command__s}{client\_command\_t}};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structtype__command__s}{type\_command\_s}}}
+\DoxyCodeLine{26 \{}
+\DoxyCodeLine{27     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *command;}
+\DoxyCodeLine{28     int (*function)(\mbox{\hyperlink{structclient__s}{client\_t}} *client, \mbox{\hyperlink{structserver__s}{server\_t}} *server, \mbox{\hyperlink{structmap__s}{map\_t}} **map);}
+\DoxyCodeLine{29 \} \mbox{\hyperlink{structtype__command__s}{type\_command\_t}};}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structstyle__writing__s}{style\_writing\_s}}}
+\DoxyCodeLine{32 \{}
+\DoxyCodeLine{33     int (*function)(\mbox{\hyperlink{structclient__s}{client\_t}} *client, \mbox{\hyperlink{structchrno__buffer__s}{chrono\_buffer\_t}} *message);}
+\DoxyCodeLine{34 \} \mbox{\hyperlink{structstyle__writing__s}{style\_writing\_t}};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structelevation__s}{elevation\_s}}}
+\DoxyCodeLine{37 \{}
+\DoxyCodeLine{38     \textcolor{keywordtype}{size\_t} nb\_players;}
+\DoxyCodeLine{39     uint8\_t linemate;}
+\DoxyCodeLine{40     uint8\_t deraumere;}
+\DoxyCodeLine{41     uint8\_t sibur;}
+\DoxyCodeLine{42     uint8\_t mendiane;}
+\DoxyCodeLine{43     uint8\_t phiras;}
+\DoxyCodeLine{44     uint8\_t thystame;}
+\DoxyCodeLine{45 \} \mbox{\hyperlink{structelevation__s}{elevation\_t}};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !COMMAND\_H\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

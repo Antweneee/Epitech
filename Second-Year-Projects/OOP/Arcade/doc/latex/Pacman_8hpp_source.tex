@@ -1,0 +1,48 @@
+\hypertarget{Pacman_8hpp_source}{}\doxysection{Pacman.\+hpp}
+\label{Pacman_8hpp_source}\index{/home/zesor/Tek/Semestre4/OOP/Arcade/ouuuh/includes/Pacman.hpp@{/home/zesor/Tek/Semestre4/OOP/Arcade/ouuuh/includes/Pacman.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{** EPITECH PROJECT, 2022}}
+\DoxyCodeLine{3 \textcolor{comment}{** B-\/OOP-\/400-\/PAR-\/4-\/1-\/arcade-\/valentin.fouillet}}
+\DoxyCodeLine{4 \textcolor{comment}{** File description:}}
+\DoxyCodeLine{5 \textcolor{comment}{** Pacman}}
+\DoxyCodeLine{6 \textcolor{comment}{*/}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef PACMAN\_HPP\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define PACMAN\_HPP\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}IGame.hpp"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{namespace }Arcade}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15     \textcolor{keyword}{class }\mbox{\hyperlink{classArcade_1_1Pacman}{Pacman}} : \textcolor{keyword}{public} \mbox{\hyperlink{classIGame}{IGame}}}
+\DoxyCodeLine{16     \{}
+\DoxyCodeLine{17         \textcolor{keyword}{public}:}
+\DoxyCodeLine{18             \mbox{\hyperlink{classArcade_1_1Pacman}{Pacman}}(std::string map\_path = \textcolor{stringliteral}{"{}config/pac\_man\_map.txt"{}});}
+\DoxyCodeLine{19             \mbox{\hyperlink{classArcade_1_1Pacman}{\string~Pacman}}();}
+\DoxyCodeLine{20             \textcolor{keywordtype}{void} init();}
+\DoxyCodeLine{21             \textcolor{keywordtype}{void} getkey(Arcade::KEYS key);}
+\DoxyCodeLine{22             \textcolor{keywordtype}{void} game\_over();}
+\DoxyCodeLine{23             \textcolor{keywordtype}{void} character\_handler();}
+\DoxyCodeLine{24             \textcolor{keywordtype}{void} end\_handler();}
+\DoxyCodeLine{25             \textcolor{keywordtype}{void} points\_handler();}
+\DoxyCodeLine{26             \textcolor{keywordtype}{void} engine(Arcade::KEYS);}
+\DoxyCodeLine{27             \textcolor{keywordtype}{void} debug();}
+\DoxyCodeLine{28             \mbox{\hyperlink{classIInfo_1_1GameData}{IInfo::GameData}} get\_game\_data();}
+\DoxyCodeLine{29             std::vector<IInfo::DataInfo> read\_file(std::string map\_path);}
+\DoxyCodeLine{30             Arcade::PROTO get\_lib\_name() \{ \textcolor{keywordflow}{return} Arcade::PROTO::PACMAN; \};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32         \textcolor{keyword}{protected}:}
+\DoxyCodeLine{33         \textcolor{keyword}{private}:}
+\DoxyCodeLine{34             \mbox{\hyperlink{classIInfo_1_1GameData}{IInfo::GameData}} \_data;}
+\DoxyCodeLine{35             \textcolor{keywordtype}{char} \_prevc;}
+\DoxyCodeLine{36             \textcolor{keywordtype}{char} e\_prevc;}
+\DoxyCodeLine{37             \textcolor{keywordtype}{int} \_to\_win;}
+\DoxyCodeLine{38     \};}
+\DoxyCodeLine{39 \}}
+\DoxyCodeLine{40 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \mbox{\hyperlink{classArcade_1_1Pacman}{Arcade::Pacman}} *get\_game();}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !PACMAN\_HPP\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

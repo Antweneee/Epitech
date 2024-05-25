@@ -1,0 +1,21 @@
+EACH CODE ARE CONTAIN IN THE FIRST 4 BYTE
+
+TEAM_NAME_MAX_LENGHT -> 16
+
+GUI_TO_SERVER :
+    UI -> Connection code from the gui to tell the server the gui want to connect the server
+    QUIT -> Logout code from the gui to tell the server that the gui is down
+    220 -> Received with successù
+
+SERVER_TO_AI:
+    /type AI -> connection ai to server
+    /team [name] -> set team name for AI
+
+SERVER_TO_GUI:
+    /type GUI -> connection gui to server
+
+SERVER_TO_GUI:
+    AMAP -> Stand for "all map" send the integrity of the map to the GUI
+    APLA -> Stand for "all players" send the integrity of the players to the GUI
+    MMAP -> Stand for "modify map" send the modified part of the map to the GUI
+    MPLA -> Stand for "modify players" send the modified players to the GUI
