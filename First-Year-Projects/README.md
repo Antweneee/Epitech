@@ -1,8 +1,17 @@
 # First Year Projects
 
-## Unix & C Lab Seminar
+* Here are most of my project at EPITECH
 
-* [PoolDays and Rush](/First-Year-Projects/CPOOL/README.md)
+## [Unix & C Lab Seminar](/First-Year-Projects/CPOOL/README.md)
 
+## [Unix System Programming](/First-Year-Projects/PSU/README.md)
 
-mkdir Finalstumper && git clone git@github.com:EpitechIT2020/B-CPE-101-PAR-1-1-finalstumper-antoine.gavira-bottari.git day && cp -r day/* Finalstumper/. && rm -rf day
+## [C Graphical Programming](/First-Year-Projects/GRAPHICS/README.md)
+
+## [Mathematics](/First-Year-Projects/Mathematics/README.md)
+
+## [Elementary Programming in C](/First-Year-Projects/CPE/README.md)
+
+## [Introduction to A.I.](/First-Year-Projects/AIA/README.md)
+## [Introduction to Web Development](/First-Year-Projects/AIA/README.md)
+## [Synthesis pool](/First-Year-Projects/SYN/README.md)

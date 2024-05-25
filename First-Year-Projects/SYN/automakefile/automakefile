@@ -1,0 +1,47 @@
+#!/bin/bash
+
+filename=$1
+n=1
+file=$(echo "$1" | cut -d "/" -f1)
+
+if [ -f "$file/Makefile" ]; then
+    rm $file/Makefile
+fi
+
+function checkadd {
+    if [ "$tmp1" = "$b" ]; then
+        echo -e "$b\t=\t$tmp2\n" >> $file/Makefile
+    fi
+    if [ "$tmp2" = "$b" ]; then
+        echo -e "$b\t=\t$tmp1\n" >> $file/Makefile
+    fi
+}
+
+for line in $(cat $filename); do
+
+    tmp1=$(echo "$line" | cut -d ";" -f1)
+    tmp2=$(echo "$line" | cut -d ";" -f2)
+
+    b="CC"
+    checkadd
+    b="CFLAGS"
+    checkadd
+    b="UNZIP"
+    checkadd
+    b="UNZIPFLAGS"
+    checkadd
+    b="ZIP"
+    checkadd
+    b="ZIPFLAGS"
+    checkadd
+    b="EXEC"
+    checkadd
+
+done < $filename
+echo -e 'OBJ\t=\t$(SRC:.c=.o)\n' >> $file/Makefile
+echo -e 'all: $(EXEC)\n' >> $file/Makefile
+echo -e '$(EXEC): $(OBJ)\n\t$(CC) -o $(EXEC) $(OBJ)\n' >> $file/Makefile
+echo -e 'clean:\n\trm -f $(OBJ)\n' >> $file/Makefile
+echo -e 'fclean: clean\n\trm -f $(NAME)\n' >> $file/Makefile
+echo -e "re: all\n" >> $file/Makefile
+echo -e ".PHONY: all clean fclean re" >> $file/Makefile

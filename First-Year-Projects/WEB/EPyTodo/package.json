@@ -1,0 +1,24 @@
+{
+    "name": "b-web-200-par-2-1-epytodo-antoine.gavira-bottari",
+    "version": "1.0.0",
+    "description": "epytodo priject",
+    "main": "src/index.js",
+    "dependencies": {
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/EpitechIT2020/B-WEB-200-PAR-2-1-epytodo-antoine.gavira-bottari.git"
+    },
+    "author": "antoine gavira florian roquelle",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/EpitechIT2020/B-WEB-200-PAR-2-1-epytodo-antoine.gavira-bottari/issues"
+    },
+    "homepage": "https://github.com/EpitechIT2020/B-WEB-200-PAR-2-1-epytodo-antoine.gavira-bottari#readme"
+}
