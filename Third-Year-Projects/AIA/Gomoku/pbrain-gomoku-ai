@@ -1,0 +1,619 @@
+#!/usr/bin/env python3
+
+import sys 
+import math
+from marvin.pbrain import AI
+from marvin.winning import winning
+
+#! ------------ CONSTANT ------------
+
+NUMBEROFARGUMENTS = 0
+ARGUMENTSOK = 1
+WRONGARGUMENTS = 2
+ARGUMENTSTYPE = 3
+
+INFOKEY = 1
+
+RECTYPE = "rectype"
+CLASSIC = "square"
+
+#! ------------ BOARD CLASS ------------
+
+class Board:
+    def __init__(self, boardSizeX = -math.inf, boardSizeY = -math.inf):
+        self.boardType = CLASSIC
+        self.boardSizeX = boardSizeX
+        self.boardSizeY = boardSizeY
+        self.board = []
+        self.isInitialized = False
+
+    def printBoard(self):
+        if (self.boardSizeX != -math.inf):
+            for i in range(0, self.boardSizeX):
+                print(self.board[i])
+
+    def initBoard(self, type, boardSizeX, boardSizeY):
+        self.boardType = type
+        if self.boardSizeX == -math.inf and self.boardSizeY == -math.inf:
+            self.boardSizeX = boardSizeX
+            self.boardSizeY = boardSizeY
+        self.board = [[0 for x in range(self.boardSizeX)] for y in range(self.boardSizeY)] 
+        self.isInitialized = True
+
+    def checkHasPieces(self):
+        for i in range(0, self.boardSizeX):
+            for j in range(0, self.boardSizeY):
+                if self.board[i][j] != 0:
+                    return True
+        return False
+
+    def getIsInitialized(self):
+        return self.isInitialized
+        
+    def place(self, x, y, val):
+        self.board[y][x] = val
+    
+    def clearBoard(self):
+        tmp = []
+        for x in range(0, self.boardSizeX):
+            tmp.append(0)
+        for i in range(0, self.boardSizeY):
+            self.board.append(tmp)
+
+#! ------------ PLAYERCOMMANDS CLASS ------------      
+
+class PlayerCommands:
+    def __init__(self):
+        self.boardInput = ""
+        self.parsedBoardInput = []
+        self.validBoardInput = False
+        self.playerInput = []
+        self.command = ""
+        self.arg1 = ""
+        self.arg2 = ""
+        self.playerCommands = {
+            "START" : self.startFunction,
+            "TURN" : self.turnFunction,
+            "BEGIN" : self.beginFunction,
+            "BOARD" : self.boardFunction,
+            "INFO" : self.infoFunction,
+            "END" : self.endFunction,
+            "ABOUT" : self.aboutFunction,
+            "RECTSTART" : self.rectstartFunction,
+            "RESTART" : self.restartFunction,
+            "TAKEBACK" : self.takebackFunction,
+            "PLAY" : self.playFunction,
+            "DISPLAY": self.displayFunction,
+        }
+        self.playerCommandsParameter = {
+            "START": [2,
+                "OK",
+                "ERROR message",
+                "int,none"
+            ],
+            "TURN": [3,
+                "aiTurn",
+                "ERROR message",
+                "int,none"
+            ],
+            "BEGIN": [1,
+                "aiTurn",
+                "ERROR message",
+                "none,none"
+            ],
+            "BOARD": [1,
+                "aiTurn",
+                "ERROR message",
+                "none,none"
+            ],
+            "INFO": [3,
+                "aiTurn",
+                "aiTurn",
+                "",
+                "string,value"
+            ],
+            "END": [1,
+                "",
+                "",
+                "none,none"
+            ],
+            "ABOUT": [1,
+                'name="Zesor", version="1.0", author="Toto&Anto", country="FRA"',
+                "ERROR message",
+                "none,none"
+            ],
+            "RECTSTART": [3,
+                "OK - parameters are good",
+                "ERROR message - rectangular board is not supported or other error",
+                "int,int"
+            ],
+            "RESTART": [1,
+                "OK",
+                "",
+                "none,none"
+            ],
+            "TAKEBACK": [3,
+                "OK",
+                "ERROR message",
+                "int,int"
+            ],
+            "PLAY": [3,
+                "",
+                "ERROR message",
+                "int,int"
+            ],
+            "DISPLAY": [1,
+            "",
+            "",
+            "none,none"
+            ]
+        }
+        self.AiCommands = {
+            "UNKNOWN" : [],
+            "ERROR" : [],
+            "MESSAGE" : [],
+            "DEBUG" : [],
+            "SUGGEST" : []
+        }
+        self.infoKeys = {
+            "timeout_turn": [3,
+                "int,none"
+            ],
+            "timeout_match": [3,
+                "int,none"
+            ],
+            "max_memory": [3,
+                "int,none"
+            ],
+            "time_left": [2,
+                "int,none"
+            ],
+            "game_type": [3,
+                "int,none"
+            ],
+            "rule": [3,
+                "int,none"
+            ],
+            "evaluate": [4,
+                "int,int"
+            ],
+            "folder": [3,
+                "string,none"
+            ],
+        }
+
+    def setPlayerInput(self, params) -> None:
+        self.playerInput = params
+
+    def startFunction(self, gameObject, baseInit = False):
+        if gameObject.over == True:
+            gameObject.aiTurn = False
+            return gameObject
+        if baseInit == True:
+            print(self.playerCommandsParameter["START"][ARGUMENTSOK], flush=True)
+            gameObject.board.initBoard(CLASSIC, 20, 20)
+            return gameObject
+        tmp = int(self.arg1)
+        if tmp < 5 or tmp > 20:
+            gameObject.aiResponse = self.playerCommandsParameter[self.command][WRONGARGUMENTS]
+        else:
+            gameObject.aiResponse = self.playerCommandsParameter[self.command][ARGUMENTSOK]
+            gameObject.board.initBoard(CLASSIC, tmp, tmp)
+        gameObject.aiTurn = False
+        return gameObject
+    
+    def displayFunction(self, gameObject):
+        gameObject.aiTurn = False
+        if gameObject.board.getIsInitialized() == False:
+            return gameObject
+        gameObject.ai.PrintBoard()
+        return gameObject
+
+    def turnFunction(self, gameObject):
+        if gameObject.over == True:
+            gameObject.aiTurn = False
+            return gameObject
+        if gameObject.board.getIsInitialized() == False:
+            gameObject = self.startFunction(gameObject, True)
+        try:
+            x = int(self.arg1)
+            y = int(self.arg2)
+        except:
+            gameObject.aiResponse = self.playerCommandsParameter[self.command][WRONGARGUMENTS]
+            gameObject.aiTurn = False
+            return gameObject
+
+        if x >= 0 and x < gameObject.board.boardSizeX or y >= 0 and y < gameObject.board.boardSizeY:
+            gameObject.aiResponse = self.playerCommandsParameter[self.command][ARGUMENTSOK]
+            gameObject.board.place(x, y, 1)
+            gameObject.aiTurn = True
+        else:
+            gameObject.aiResponse = self.playerCommandsParameter[self.command][WRONGARGUMENTS]
+            gameObject.aiTurn = False
+        return gameObject
+    
+    def beginFunction(self, gameObject):
+        if gameObject.board.getIsInitialized() == False:
+            gameObject = self.startFunction(gameObject, True)
+        if gameObject.over == True:
+            gameObject.aiTurn = False
+            return gameObject
+        gameObject.aiStart = True
+        gameObject.aiTurn = True
+        return gameObject
+    
+    def __clearStr(self):
+        self.boardInput = self.boardInput.replace("\n", "")
+        self.boardInput = self.boardInput.replace("\t", "")
+
+    def __boardGetLine(self):
+        self.boardInput = input()
+        if self.boardInput:
+            self.__clearStr()
+            if ',' in self.boardInput:
+                self.parsedBoardInput =  self.boardInput.split(',')
+                self.validBoardInput = True
+                return False
+            elif self.boardInput == "DONE":
+                return True
+        else:
+            sys.exit(0)
+
+    def boardParse(self):
+        if self.boardInput: 
+            self.__clearStr()
+            if ',' in self.boardInput:
+                self.parsedBoardInput =  self.boardInput.split(',')
+                self.validBoardInput = True
+                return False
+            elif self.boardInput == "DONE":
+                return True
+        return False
+
+    def boardReset(self):
+        self.boardInput = ""
+        self.parsedBoardInput = []
+
+    def executeBoard(self, gameObject):
+        if len(self.parsedBoardInput) == 3 and self.parsedBoardInput[0].isdigit() and self.parsedBoardInput[1].isdigit() and self.parsedBoardInput[2].isdigit():
+            x = int(self.parsedBoardInput[0])
+            y = int(self.parsedBoardInput[1])
+            val = int(self.parsedBoardInput[2])
+            if x < gameObject.board.boardSizeX and y < gameObject.board.boardSizeY and (val == 1 or val == 2):
+                gameObject.board.place(x, y, val)
+        return gameObject
+
+    def boardFunction(self, gameObject):
+        if gameObject.board.getIsInitialized() == False:
+            gameObject = self.startFunction(gameObject, True)
+        if gameObject.over == True:
+            gameObject.aiTurn = False
+            return gameObject
+        boardCommand = True
+
+        while boardCommand:
+            if self.__boardGetLine() == True:
+                boardCommand = False
+            else:
+                gameObject = self.executeBoard(gameObject)
+            self.boardReset()
+        if gameObject.board.checkHasPieces() == False:
+            gameObject.aiStart = True
+        gameObject.aiTurn = True
+        return gameObject
+    
+    def infoFunction(self, gameObject):
+        gameObject.aiTurn = False
+        return gameObject
+
+    def endFunction(self, gameObject):
+        gameObject.over = True
+        gameObject.aiTurn = False
+        gameObject.running = False
+        sys.exit(0)
+        return gameObject
+
+    def aboutFunction(self, gameObject):
+        gameObject.aiResponse = self.playerCommandsParameter[self.command][ARGUMENTSOK]
+        gameObject.aiTurn = True
+        return gameObject
+
+    def rectstartFunction(self, gameObject):
+        if gameObject.over == True:
+            gameObject.aiTurn = False
+            return gameObject
+        x = int(self.arg1)
+        y = int(self.arg2)
+
+        if x < 5 or x > 20 and y < 5 or y > 20:
+            gameObject.aiResponse = self.playerCommandsParameter[self.command][WRONGARGUMENTS]
+        else:
+            gameObject.aiResponse = self.playerCommandsParameter[self.command][ARGUMENTSOK]
+            gameObject.board.initBoard(RECTYPE, x, y)
+        gameObject.aiTurn = True
+        return gameObject
+    
+    def restartFunction(self, gameObject):
+        gameObject.board.clearBoard()
+        gameObject.aiResponse = self.playerCommandsParameter[self.command][ARGUMENTSOK]
+        gameObject.aiTurn = False
+        gameObject.over = False
+        return gameObject
+    
+    def takebackFunction(self, gameObject):
+        if gameObject.board.getIsInitialized() == False:
+            gameObject.aiResponse = self.playerCommandsParameter[self.command][WRONGARGUMENTS]
+            gameObject.aiTurn = False
+            return gameObject
+        if gameObject.over == True:
+            gameObject.aiTurn = False
+            return gameObject
+        x = int(self.arg1)
+        y = int(self.arg2)
+
+        if gameObject.lastMove[0] != -math.inf and gameObject.lastMove[1] != -math.inf:
+            if x > 0 and x < gameObject.board.boardSizeX or y > 0 and y < gameObject.board.boardSizeY:
+                gameObject.aiResponse = self.playerCommandsParameter[self.command][ARGUMENTSOK]
+                gameObject.board.place(gameObject.lastMove[0], gameObject.lastMove[1], 0)
+            else:
+                gameObject.aiResponse = self.playerCommandsParameter[self.command][WRONGARGUMENTS]
+        else:
+            gameObject.aiResponse = self.playerCommandsParameter[self.command][WRONGARGUMENTS]
+        gameObject.aiTurn = True
+        return gameObject
+
+    def playFunction(self, gameObject):
+        if gameObject.board.getIsInitialized() == False:
+            gameObject.aiResponse = self.playerCommandsParameter[self.command][WRONGARGUMENTS]
+            gameObject.aiTurn = False
+            return gameObject
+        if gameObject.over == True:
+            gameObject.aiTurn = False
+            return gameObject
+        x = int(self.arg1)
+        y = int(self.arg2)
+
+        if x > 0 and x < gameObject.board.boardSizeX or y > 0 and y < gameObject.board.boardSizeY:
+            gameObject.aiResponse = self.playerCommandsParameter[self.command][ARGUMENTSOK]
+            gameObject.board.place(x, y, 1)
+        else:
+            gameObject.aiResponse = self.playerCommandsParameter[self.command][WRONGARGUMENTS]
+        gameObject.aiTurn = True
+        return gameObject
+
+    def __checkCommand(self, gameObject):
+        condition = 0
+        goodArg = 0
+
+        # * Check if number of arguments given is good
+        if len(self.playerInput) == self.playerCommandsParameter[self.command][NUMBEROFARGUMENTS] and self.command != "INFO":
+            condition += 1
+            # print("good arg number")
+
+        if self.playerCommandsParameter[self.command][NUMBEROFARGUMENTS] != 0:
+            tmp = self.playerCommandsParameter[self.command][ARGUMENTSTYPE].split(',')
+            if self.command != "INFO":
+                # * Check command arguments types
+                if tmp[0] != "none":
+                    if tmp[0] == "int" and self.arg1.isdigit():
+                        # print("good arg1 type")
+                        goodArg += 1
+                else:
+                    goodArg +=1
+                    # print("good arg1 none")
+
+                if tmp[1] != "none":
+                    if tmp[1] == "int" and self.arg2.isdigit():
+                        # print("good arg2 type")
+                        goodArg += 1
+                else:
+                    # print("good arg2 none")
+                    goodArg +=1
+
+                # print("goodArg:")
+                # print(goodArg)
+                if goodArg == 2:
+                    condition +=1
+            else:
+                # print("player input: ", self.playerInput)
+                if len(self.playerInput) > 1:
+                    infoKey = ""
+                    for key in self.infoKeys:
+                        if key == self.playerInput[INFOKEY]:
+                            infoKey = self.playerInput[INFOKEY]
+                            break
+                    if infoKey != "":
+                        # print("command: ", infoKey)
+                        if len(self.playerInput) == self.infoKeys[infoKey][0]:
+                            # print("good arg number: ", self.infoKeys[infoKey][0], " got: ", len(self.playerInput))
+                            condition += 1
+                        tmp = self.infoKeys[infoKey][1].split(',')
+                        # print(tmp[0], " ", tmp[1])
+                        if tmp[0] != "none":
+                            # print(self.playerInput[2])
+                            # print(condition)
+                            if tmp[0] == "int" and self.playerInput[2].isdigit() and condition == 1:
+                                goodArg += 1
+                                # print("good arg1  int")
+                            if tmp[0] == "string" and condition == 1:
+                                goodArg +=1
+                                # print("good arg1 STR")
+                        else:
+                            goodArg += 1
+                            # print("good arg1 none")
+                        
+                        if tmp[1] != "none":
+                            if tmp[1] == "int" and self.playerInput[2].isdigit() and condition == 1:
+                                goodArg += 1
+                                # print("good arg2 int")
+                            if tmp[1] == "string" and condition == 1:
+                                # print("good arg2 STR")
+                                goodArg +=1
+                        else:
+                            goodArg += 1
+                            # print("good arg2 none")
+
+                        if goodArg == 2:
+                            condition += 1
+
+        # * If arguments are ok return True else False
+        # print (condition)
+        if condition == 2:
+            # print("TRUE")
+            return True
+        else:
+            # print("FALSE")
+            return False
+
+    def execute(self, gameObject):
+        tmpGameObject = gameObject
+        self.playerInput = tmpGameObject.parsedPlayerInput
+        if len(self.playerInput) != 0:
+            self.command = self.playerInput[0]
+        else:
+            self.command = "none"
+
+        found = False
+
+        for command in self.playerCommands:
+            if self.command == command:
+                found = True
+                break
+
+        if found == False:
+            tmpGameObject.aiResponse = "UNKNOWN command not found"
+            return tmpGameObject
+
+        if len(self.playerInput) > 1:
+            self.arg1 = self.playerInput[1]
+        else:
+            self.arg1 = "none"
+        if len(self.playerInput) > 2:
+            self.arg2 = self.playerInput[2]
+        else:
+            self.arg2 = "none"
+
+        if self.__checkCommand(tmpGameObject) == True:
+            tmpGameObject = self.playerCommands[self.command](tmpGameObject)
+        else:
+            tmpGameObject.aiResponse = self.playerCommandsParameter[self.command][WRONGARGUMENTS]
+
+        return tmpGameObject
+
+#! ------------ GAME CLASS ------------
+
+class Game:
+    def __init__(self) -> None:
+        self.playerInput = ""     
+        self.parsedPlayerInput = []   
+        self.over = False
+        self.running = True
+        self.playerCommand = ""
+        self.aiResponse = ""
+        self.lastMove = (-math.inf, -math.inf)
+        self.board = Board()
+        self.command = PlayerCommands()
+        self.ai = AI()
+        self.aiStart = False
+        self.aiTurn = False
+
+    def aiResponseFunction(self) -> None:
+        if self.board.getIsInitialized() == True:
+            if self.ai.isInitialized() == False and self.aiTurn == True:
+                # print("init ai board")
+                self.ai.initBoard(self.board.boardSizeX, self.board.board)
+        if len(self.aiResponse) != 0 and self.aiResponse != "aiTurn":
+            print(self.aiResponse, flush=True)
+        elif (self.aiTurn == True and self.over == False):
+            x, y = self.ai.StartAI(self.aiStart, self.board.board)
+            self.board.board = self.ai.getBoard()
+            self.aiResponse = str(y)+","+str(x)
+            # self.board.place(x, y, 2)
+            print(f'{x},{y}', flush=True)
+    
+    def endOfTurn(self) -> None:
+        self.parsedPlayerInput = []
+        self.playerInput = []
+        self.aiResponse = ""
+        self.aiStart = False
+        self.aiTurn = False
+
+    def getAiResponse(self) -> str:
+        return self.aiResponse
+
+    def setPlayerInput(self, input) -> None:
+        self.playerInput = input
+    
+    def parsePlayerInput(self) -> None:
+         if self.playerInput: 
+            self.parsedPlayerInput = self.playerInput.split(' ')
+            self.__clearStr()
+            self.parsedPlayerInput = self.__checkNumbers()
+        
+
+    def getPlayerInput(self) -> str:
+        return self.playerInput
+
+    def __clearStr(self) -> None:
+        self.parsedPlayerInput = [s.replace('\n', '') for s in self.parsedPlayerInput]
+        self.parsedPlayerInput = [s.replace('\t', '') for s in self.parsedPlayerInput]
+
+    def __checkNumbers(self) -> list:
+        tmp = []
+
+        for i in range(0, len(self.parsedPlayerInput)):
+            if ',' in self.parsedPlayerInput[i]:
+                tmp = self.parsedPlayerInput[i].split(',')
+    
+        if (len(tmp) > 0):
+            self.parsedPlayerInput.pop(len(self.parsedPlayerInput) - 1)
+            for i in range(0, len(tmp)):
+                self.parsedPlayerInput.append(tmp[i])
+
+        return self.parsedPlayerInput
+
+    def __getInput(self) -> None:
+        self.playerInput = input()
+        if self.playerInput: 
+            self.parsedPlayerInput = self.playerInput.split(' ')
+            self.__clearStr()
+            self.parsedPlayerInput = self.__checkNumbers()
+        else:
+            sys.exit(0)
+
+    def __checkPlayerCommand(self) -> None:
+        self = self.command.execute(self)
+    
+    def __gameOver(self) -> None:
+        pass
+
+    def __gameState(self):
+        tmp = winning(self.board.boardSizeX, self.board.board)
+        if tmp != None:
+            self.over = True
+            self = self.command.endFunction(self)
+
+    def gameLoop(self) -> None:
+        while(self.running == True):
+            self.__getInput()
+            self.__checkPlayerCommand()
+            if self.over == False:
+                self.__gameState()
+            self.aiResponseFunction()
+            if self.over == False:
+                self.__gameState()
+            # self.board.printBoard()
+            self.endOfTurn()
+        self.__gameOver()
+
+
+#! ------------ PROGRAM CLASS ------------
+
+
+def main():
+    game_object = Game()
+    game_object.gameLoop()
+
+
+if '__main__' == __name__:
+    main()

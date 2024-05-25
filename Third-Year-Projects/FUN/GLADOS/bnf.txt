@@ -1,0 +1,57 @@
+<program> ::= {<function>}
+
+<function> ::= "function" <type> <identifier> "(" [<params>] ")" "{" <statement_list> "}"
+
+<params> ::= <param_decl> {"," <param_decl>}
+
+<param_decl> ::= "var"? <type> <identifier>
+
+<statement_list> ::= {<statement>}
+
+<statement> ::= <var_decl> | <assignment> | <if_statement> | <while_statement> | <return_statement> | <function_call> | <expression> ";"
+
+<var_decl> ::= "var" <type> <identifier> ["=" <expression>] ";"
+
+<assignment> ::= <identifier> "=" <expression> ";"
+
+<if_statement> ::= "if" "(" <expression> ")" "{" <statement_list> "}" ["else" "{" <statement_list> "}"]
+
+<while_statement> ::= "while" "(" <expression> ")" "{" <statement_list> "}"
+
+<return_statement> ::= "return" [<expression>] ";"
+
+<function_call> ::= <identifier> "(" [<args>] ")" ";"
+
+<args> ::= <expression> {"," <expression>}
+
+<expression> ::= <term> {<add_op> <term>}
+
+<term> ::= <factor> {<mult_op> <factor>}
+
+<factor> ::= <integer_literal> | <string_literal> | <bool_literal> | <identifier> | "(" <expression> ")" | <unary_op> <factor> | <float_literal> | <char_literal>
+
+<bool_literal> ::= "true" | "false"
+
+<add_op> ::= "+" | "-"
+
+<mult_op> ::= "*" | "/"
+
+<unary_op> ::= "-" | "!"
+
+<type> ::= "int" | "string" | "bool" | "char" | "float"
+
+<integer_literal> ::= <digit> {<digit>}
+
+<float_literal> ::= <digit> "." <digit>
+
+<char_literal> ::= "'" <unicode_char> "'"
+
+<string_literal> ::= '"' { <unicode_char> } '"'
+
+<identifier> ::= <alpha> {<alpha_num>}
+
+<alpha> ::= "A" | ... | "Z" | "a" | ... | "z"
+
+<alpha_num> ::= <alpha> | <digit>
+
+<digit> ::= "0" | ... | "9"
