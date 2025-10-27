@@ -1,17 +1,59 @@
-# Area
+# AREA - Action Reaction project (IFTT like)
 
-> __LANGUAGES: JS, GO, PYTHON, DART, FLUTTER, YAML, DOCKER, HTML, CSS, REACT__
+web-app to automate common web action and link them to a chosen reaction
 
-> The goal of this project is to discover, as a whole, the software platform that you have chosen through the creation of a business application.
+## Running the project
 
-> To do this, you must implement a software suite that functions similar to that of IFTTT and/or Zapier.
+This wep-app is dockerized so to run this project simply run the command:
+```
+docker compose up -d --build
+```
 
-> This software suite will be broken into three parts :
+## Services
 
-> • An application server to implement all the features listed below (see Features)
+- <a href="./backend/services/coingecko/README.md">Coingecko<a/>
+- <a href="./backend/services/discord/README.md">Discord<a/>
+- <a href="./backend/services/github/README.md">Github<a/>
+- <a href="./backend/services/google/README.md">Google<a/>
+    - Calendar
+    - Drive
+    - Gmail
+    - Youtube
+- <a href="./backend/services/ipfs/README.md">IPFS<a/>
+- <a href="./backend/services/linkedin/README.md">Linkedin<a/>
+- <a href="./backend/services/spotify/README.md">Spotify<a/>
+- <a href="./backend/services/twitch/README.md">Twitch<a/>
+- <a href="./backend/services/twitter/README.md">Twitter<a/>
+- <a href="./backend/services/weather/README.md">Weather<a/>
 
-> • A web client to use the application from your browser by querying the application server
 
-> • A mobile client to use the application from your phone by querying the application server
+## Architecture
+
+<img src="./assets/area_architecture.png" />
+
+## Technologies
+
+### Languages:
+<img width="200px"  src="https://skillicons.dev/icons?i=go,dart,js,python&perline=12"/>
+
+### Backend:
+- Gateway
+- Micro-services
+- PgSQL
+
+### Frontend:
+- ReactJS
+- Flutter IOS ans Android
+
+### DevOps CI/CD
+- Docker
+- Github Actions
+
+## 🤝 Contributors
+- <a href="./backend/services/coingecko/README.md">Antoine GAVIRA-BOTTARI<a/>
+- <a href="https://github.com/valoup917">Valentin FOUILLET<a/>
+- <a href="https://github.com/twillsonepitech">Thomas WILLSON<a/>
+- <a href="https://github.com/Zesor">Illyas CHIHI<a/>
+- <a href="https://github.com/silyanait">Silya NAIT ZERRAD<a/>
 
 * Score: <span style="color:rgb(0, 255,0)">&#9724; 100% </span>
